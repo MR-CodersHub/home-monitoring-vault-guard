@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account | VaultGuard Security</title>
+  <meta name="description" content="Start a 30-day VaultGuard monitoring trial. Cameras included, no card needed, verification usually complete within 48 hours." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <script src="../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" class="auth-wrap">
+    <aside class="auth-aside">
+      <a class="nav-logo" href="../../index.html">
+        <span class="logo-icon" aria-hidden="true"><img src="../../assets/img/logo.svg" alt="" width="32" height="32" /></span>
+        <span class="logo-text">Vault<span>Guard</span></span>
+      </a>
+      <div class="aside-copy">
+        <h2>30 days free. No card, no contract.</h2>
+        <p>Create the account, confirm you own or manage the property, and a human verification check finishes the job. Most systems go live within 48 hours.</p>
+        <div class="icon-strip">
+          <div class="icon-strip-item"><span data-icon="camera" data-icon-class="w-5 h-5"></span><span><strong>Cameras included</strong> on every plan</span></div>
+          <div class="icon-strip-item"><span data-icon="dollar" data-icon-class="w-5 h-5"></span><span><strong>$0 dispatch fees</strong> when it matters</span></div>
+          <div class="icon-strip-item"><span data-icon="clock" data-icon-class="w-5 h-5"></span><span><strong>48h activation</strong> average, 24h in Austin</span></div>
+        </div>
+        <div class="auth-quote"><strong>&ldquo;They called on day 25 with my own trigger data and told me the Smart plan was plenty. Nobody ever does that.&rdquo;</strong><br />Homeowner, Round Rock</div>
+      </div>
+      <div class="auth-aside-foot">Cancel any time from the dashboard, no phone call needed.</div>
+    </aside>
+
+    <section class="auth-main">
+      <div class="auth-panel">
+        <div class="form-head">
+          <h1>Create your account</h1>
+          <p>Six fields. This demo validates and confirms locally, it never sends a real password anywhere.</p>
+        </div>
+
+        <form data-form="signup" data-dash="public/auth/user/user-dashboard.html" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label class="label" for="suName">Full name</label>
+              <input class="input" type="text" id="suName" name="name" placeholder="Alex Morgan" data-label="Name" autocomplete="name" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="suEmail">Email</label>
+              <input class="input" type="email" id="suEmail" name="email" placeholder="you@domain.com" data-label="Email" autocomplete="email" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="suPhone">Phone <span class="label-hint">(for alerts)</span></label>
+              <input class="input" type="tel" id="suPhone" name="phone" placeholder="+1 512 555 0142" data-label="Phone" autocomplete="tel" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="suAddress">Property address</label>
+              <input class="input" type="text" id="suAddress" name="address" placeholder="2400 South Lamar Blvd, Austin" data-label="Address" autocomplete="street-address" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="suPassword">Password</label>
+              <input class="input" type="password" id="suPassword" name="password" placeholder="At least 8 characters" data-label="Password" autocomplete="new-password" minlength="8" required data-strength-target />
+              <div class="strength" data-strength data-level="0"><span>Password strength</span></div>
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="suConfirm">Confirm password</label>
+              <input class="input" type="password" id="suConfirm" name="confirm" placeholder="Repeat the password" data-label="Confirmation" autocomplete="new-password" minlength="8" data-match="#suPassword" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field field-full">
+              <label class="label" for="suPlan">Plan you are considering</label>
+              <span class="field-select">
+                <select class="select" id="suPlan" name="plan" data-label="Plan">
+                  <option value="trial">Not sure yet, help me choose</option>
+                  <option value="smart">Smart &mdash; $19/mo, up to 4 cameras</option>
+                  <option value="complete">Complete &mdash; $39/mo, up to 12 cameras</option>
+                  <option value="portfolio">Portfolio &mdash; from $49/unit</option>
+                </select>
+                <span data-icon="chevDown" data-icon-class="w-4 h-4"></span>
+              </span>
+              <p class="field-error"></p>
+            </div>
+            <div class="field field-full">
+              <label class="checkbox"><input type="checkbox" name="terms" data-label="Terms" required /><span>I accept the <a href="../pages/Terms-of-service.html">Terms of Service</a> and the <a href="../pages/privacy-policy.html">Privacy Policy</a>.</span></label>
+              <p class="field-error"></p>
+            </div>
+            <div class="field field-full">
+              <label class="checkbox"><input type="checkbox" name="updates" /><span>Send me the monthly security briefing. Account and alert notices are always on regardless.</span></label>
+              <p class="field-error"></p>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn-primary" type="submit">Create account <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <p class="form-msg" data-form-msg role="status"></p>
+          <div data-form-success>
+            <strong>Account created</strong>
+            Verification usually finishes inside 48 hours. <a data-dash-link href="user/user-dashboard.html">Open your dashboard</a> to see what happens next.
+          </div>
+        </form>
+
+        <div class="auth-divider">already protected</div>
+        <div class="auth-quick">
+          <a href="login.html"><span data-icon="user" data-icon-class="w-4 h-4"></span><span><strong>Sign in</strong> to your existing account</span></a>
+          <a href="../pages/contact.html"><span data-icon="headset" data-icon-class="w-4 h-4"></span><span><strong>Talk to sales</strong> for portfolios of 10+ units</span></a>
+        </div>
+
+        <p class="auth-alt">Prefer to read first? <a href="../pages/pricing.html">Compare plans</a></p>
+        <p class="auth-alt"><a href="../../index.html">Back to vaultguard.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../src/js/icons.js"></script>
+  <script src="../../src/js/site-data.js"></script>
+  <script src="../../src/js/data/services.js"></script>
+  <script src="../../src/js/data/plans.js"></script>
+  <script src="../../src/js/data/posts.js"></script>
+  <script src="../../src/js/data/faqs.js"></script>
+  <script src="../../src/js/core.js"></script>
+  <script src="../../src/js/theme.js"></script>
+  <script src="../../src/js/rtl.js"></script>
+  <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/main.js"></script>
+</body>
+</html>

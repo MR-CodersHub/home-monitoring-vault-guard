@@ -1,619 +1,355 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VaultGuard — 24/7 professional home security monitoring, smart cameras, video doorbells, smart locks, and instant emergency response for homeowners." />
-  <title>VaultGuard | Professional Home Security & Smart Monitoring</title>
+  <title>VaultGuard | Professionally Monitored Home Security</title>
+  <meta name="description" content="VaultGuard delivers 24/7 professionally monitored alarms, smart cameras, video doorbells, smart locks and rental verification for homes, rentals and property managers." />
+  <meta name="theme-color" content="#120D2B" />
+  <meta property="og:title" content="VaultGuard | Professionally Monitored Home Security" />
+  <meta property="og:description" content="Alarms, cameras and access control monitored by real operators. Median response 27 seconds." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="src/css/style.css" />
+  <script src="src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="src/css/components.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-navbar></div>
 
-  <!-- ═══════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════ -->
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a href="#" class="nav-logo" aria-label="VaultGuard Home">
-        <div class="logo-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 2L4 7V15C4 21.6 9.2 27.8 16 30C22.8 27.8 28 21.6 28 15V7L16 2Z" fill="url(#logoGrad)"/>
-            <path d="M12 16L15 19L21 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="logoGrad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#A855F7"/>
-                <stop offset="1" stop-color="#6D28D9"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <span class="logo-text">VaultGuard</span>
-      </a>
-
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#plans" class="nav-link">Plans & Pricing</a></li>
-        <li><a href="#solutions" class="nav-link">Equipment</a></li>
-        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-        <li><a href="#footer" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="tel:+18005550199" class="nav-phone" aria-label="Call us">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-          1-800-555-0199
-        </a>
-        <a href="auth/login.html" class="btn-login" id="loginBtn">Login</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
-        </button>
+  <main id="main">
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="hero" aria-label="VaultGuard home security">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg-glow glow-1"></div>
+        <div class="hero-bg-glow glow-2"></div>
+        <div class="hero-bg-glow glow-3"></div>
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        <div class="hero-orb orb-4"></div>
+        <div class="hero-orb orb-5"></div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Nav Overlay -->
-  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
-
-  <!-- ═══════════════════════════════════════════
-       HERO SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="hero" id="hero" aria-label="Hero">
-
-    <!-- ── Background glows ── -->
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-bg-glow glow-1"></div>
-      <div class="hero-bg-glow glow-2"></div>
-      <div class="hero-bg-glow glow-3"></div>
-    </div>
-
-    <!-- ── 3D Decorative Orbs (static depth accents matching reference) ── -->
-    <div class="hero-orb orb-1" aria-hidden="true"></div>
-    <div class="hero-orb orb-2" aria-hidden="true"></div>
-    <div class="hero-orb orb-3" aria-hidden="true"></div>
-    <div class="hero-orb orb-4" aria-hidden="true"></div>
-    <div class="hero-orb orb-5" aria-hidden="true"></div>
-
-    <!-- ── TOP-RIGHT CAMERA (facing down-left toward center) ── -->
-    <div class="hero-cam hero-cam-tr" aria-hidden="true">
-      <img src="assets/decor-right.png" alt="CCTV Security Camera" />
-    </div>
-
-    <!-- ── BOTTOM-LEFT CAMERA (facing up-right toward center) ── -->
-    <div class="hero-cam hero-cam-bl" aria-hidden="true">
-      <img src="assets/decor-left.png" alt="CCTV Security Camera" />
-    </div>
-
-    <!-- ── Decorative SVG wave ribbon & corner hatch accents ── -->
-    <svg class="hero-waves" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
-      <!-- Corner diagonal hatching lines -->
-      <g opacity="0.18" stroke="#A855F7" stroke-width="1.2">
-        <line x1="20" y1="780" x2="160" y2="640" />
-        <line x1="50" y1="780" x2="190" y2="640" />
-        <line x1="80" y1="780" x2="220" y2="640" />
-        <line x1="110" y1="780" x2="250" y2="640" />
-        <line x1="140" y1="780" x2="280" y2="640" />
-
-        <line x1="1260" y1="180" x2="1400" y2="40" />
-        <line x1="1290" y1="180" x2="1430" y2="40" />
-        <line x1="1320" y1="180" x2="1460" y2="40" />
-        <line x1="1350" y1="180" x2="1490" y2="40" />
-      </g>
-
-      <!-- Main Glowing Neon Ribbon connecting both CCTV cameras diagonally -->
-      <path d="M 120 700 C 260 640, 320 480, 520 540 C 720 600, 840 430, 1020 370 C 1180 320, 1260 210, 1360 160"
-            stroke="url(#neonRibbon)" stroke-width="3" fill="none" opacity="0.9" filter="url(#neonGlow)" />
-      <!-- Secondary subtle ribbon line -->
-      <path d="M 90 730 C 230 670, 300 510, 490 570 C 690 630, 810 460, 990 400 C 1150 350, 1230 240, 1330 190"
-            stroke="url(#neonRibbon2)" stroke-width="1.5" fill="none" opacity="0.45" />
-
-      <defs>
-        <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#C084FC" flood-opacity="0.8" />
-          <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#A855F7" flood-opacity="0.5" />
-        </filter>
-        <linearGradient id="neonRibbon" x1="120" y1="700" x2="1360" y2="160" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#9333EA" stop-opacity="0.4" />
-          <stop offset="25%" stop-color="#C084FC" stop-opacity="1" />
-          <stop offset="55%" stop-color="#E879F9" stop-opacity="1" />
-          <stop offset="80%" stop-color="#A855F7" stop-opacity="0.95" />
-          <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.3" />
-        </linearGradient>
-        <linearGradient id="neonRibbon2" x1="90" y1="730" x2="1330" y2="190" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#7C3AED" stop-opacity="0" />
-          <stop offset="50%" stop-color="#C084FC" stop-opacity="0.6" />
-          <stop offset="100%" stop-color="#A855F7" stop-opacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
-
-    <!-- ── Main content (centered glass card) ── -->
-    <div class="hero-center" data-reveal="up">
-      <div class="hero-glass-card">
-        <span class="hero-eyebrow">
-          <span class="eyebrow-dot" aria-hidden="true"></span>
-          24/7 PROFESSIONAL HOME SECURITY
-        </span>
-        <h1 class="hero-heading">
-          Protecting <em>Your Home</em><br />
-          Securing <em>Your Peace.</em>
-        </h1>
-        <p class="hero-subtext">
-          Stay protected around the clock with intelligent monitoring, smart security devices, and rapid emergency response.
-        </p>
-        <div class="hero-ctas">
-          <a href="#plans" class="btn-primary" id="heroGetProtected">
-            Get Protected
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#plans" class="btn-ghost" id="heroExplorePlans">Explore Plans</a>
-        </div>
-        <div class="hero-trust">
-          <span class="trust-item">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#A855F7" opacity="0.3"/><circle cx="12" cy="12" r="5" fill="#A855F7"/></svg>
-            24/7 Monitoring
-          </span>
-          <span class="trust-sep" aria-hidden="true">•</span>
-          <span class="trust-item">Smart Alerts</span>
-          <span class="trust-sep" aria-hidden="true">•</span>
-          <span class="trust-item">Professional Response</span>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       STATS STRIP
-  ═══════════════════════════════════════════ -->
-  <section class="stats-strip" aria-label="Key statistics">
-    <div class="container">
-      <div class="stats-card glass-card" data-reveal="up">
-        <div class="stat-item">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Professional Monitoring</div>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <div class="stat-number">99<span class="stat-sup">%</span></div>
-          <div class="stat-label">System Reliability</div>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <div class="stat-number">10K<span class="stat-sup">+</span></div>
-          <div class="stat-label">Homes Protected</div>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <div class="stat-number">&lt;30<span class="stat-sup">s</span></div>
-          <div class="stat-label">Alert Response</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       WHY CHOOSE US / ABOUT
-  ═══════════════════════════════════════════ -->
-  <section class="about" id="about" aria-label="About VaultGuard">
-    <!-- Background diagonals -->
-    <div class="about-bg" aria-hidden="true">
-      <svg class="about-lines" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line x1="-100" y1="600" x2="700" y2="-50" stroke="#A855F7" stroke-width="0.5" opacity="0.12"/>
-        <line x1="100" y1="600" x2="900" y2="-50" stroke="#A855F7" stroke-width="0.5" opacity="0.08"/>
-        <line x1="600" y1="600" x2="1400" y2="-50" stroke="#7C3AED" stroke-width="0.5" opacity="0.1"/>
-      </svg>
-    </div>
-
-    <div class="container">
-      <div class="section-label" data-reveal="up">WHY CHOOSE US</div>
-      <h2 class="section-heading" data-reveal="up">Security That<br /><span class="accent-text">Never Sleeps</span></h2>
-
-      <div class="about-grid">
-        <div class="about-left" data-reveal="left">
-          <p class="about-body">
-            At VaultGuard, we combine cutting-edge smart technology with round-the-clock professional monitoring to deliver security that truly never rests. From the moment you install our system, a dedicated team of security professionals begins watching over your home — 24 hours a day, every day of the year.
-          </p>
-          <p class="about-body">
-            Our intelligent platform learns your home's patterns, detects anomalies instantly, and connects you to emergency services when it matters most. Smart devices, real-time alerts, and a team of trained professionals — all working together to keep your family safe.
-          </p>
-
-          <div class="about-stats-mini">
-            <div class="about-stat">
-              <div class="about-stat-num">3K<span>+</span></div>
-              <div class="about-stat-label">Cities Covered</div>
+      <div class="hero-container">
+        <div class="hero-center" data-reveal="up">
+          <div class="hero-glass-card">
+            <span class="hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>24/7 PROFESSIONAL HOME SECURITY</span>
+            <h1 class="hero-heading">Protecting <em>Your Home</em><br />Securing <em>Your Peace.</em></h1>
+            <p class="hero-subtext">Alarms, cameras and smart locks watched by real operators in Austin. Median response 27 seconds, video verified before anyone is dispatched.</p>
+            <div class="hero-ctas">
+              <a href="public/pages/pricing.html" class="btn-primary">Get Protected<span aria-hidden="true">&nbsp;&rarr;</span></a>
+              <a href="public/pages/services.html" class="btn-ghost">Explore Services</a>
             </div>
-            <div class="about-stat">
-              <div class="about-stat-num">100M<span>+</span></div>
-              <div class="about-stat-label">Events Monitored</div>
-            </div>
-          </div>
-
-          <a href="#how-it-works" class="btn-outline" id="aboutLearnMore">Learn More →</a>
-        </div>
-
-        <div class="about-right" data-reveal="right">
-          <div class="about-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85&auto=format&fit=crop"
-              alt="Family feeling safe in a modern smart home"
-              class="about-img"
-              loading="lazy"
-            />
-            <div class="about-overlay-card glass-card">
-              <div class="overlay-line">
-                <span class="overlay-dot" aria-hidden="true"></span>
-                Always Watching
-              </div>
-              <div class="overlay-line">
-                <span class="overlay-dot active" aria-hidden="true"></span>
-                Always Ready
-              </div>
+            <div class="hero-trust">
+              <span class="trust-item">24/7 Monitoring</span>
+              <span class="trust-sep" aria-hidden="true">&bull;</span>
+              <span class="trust-item">Video Verified</span>
+              <span class="trust-sep" aria-hidden="true">&bull;</span>
+              <span class="trust-item">No Contracts</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════════
-       24/7 MONITORING FEATURES
-  ═══════════════════════════════════════════ -->
-  <section class="monitoring" id="monitoring" aria-label="24/7 Monitoring Features">
-    <div class="monitoring-bg" aria-hidden="true">
-      <div class="monitor-glow"></div>
-    </div>
-    <div class="container">
-      <div class="monitoring-inner">
-        <div class="monitoring-text" data-reveal="left">
-          <div class="section-label">ALWAYS ON</div>
-          <h2 class="section-heading">Protection<br /><span class="accent-text">Around the Clock</span></h2>
-          <p class="section-sub">Your home doesn't have business hours.<br />Neither does your security.</p>
-
-          <div class="feature-cards">
-            <div class="feature-card glass-card" data-reveal="up" style="--delay:0.1s">
-              <div class="feature-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title">24/7 Live Monitoring</h3>
-                <p class="feature-card-body">Trained professionals watching for suspicious activity and emergency events around the clock.</p>
-              </div>
-            </div>
-
-            <div class="feature-card glass-card" data-reveal="up" style="--delay:0.2s">
-              <div class="feature-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title">Instant Alerts</h3>
-                <p class="feature-card-body">Receive real-time notifications directly on your phone the moment anything unusual is detected.</p>
-              </div>
-            </div>
-
-            <div class="feature-card glass-card" data-reveal="up" style="--delay:0.3s">
-              <div class="feature-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 12 19.79 19.79 0 0 1 1.73 3.41 2 2 0 0 1 3.71 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-              </div>
-              <div class="feature-card-content">
-                <h3 class="feature-card-title">Emergency Response</h3>
-                <p class="feature-card-body">Get immediate assistance when an alarm or critical event is detected — police, fire, or medical.</p>
-              </div>
-            </div>
+    <!-- ═══ STATS ═══ -->
+    <section class="stats-strip" aria-label="Key statistics">
+      <div class="vg-container">
+        <div class="stats-card glass-card" data-reveal="up">
+          <div class="stat-item">
+            <div class="stat-number counter" data-count="24">0</div>
+            <div class="stat-label">Operators on desk, 24/7</div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number counter" data-count="27">0</div>
+            <div class="stat-label">Second median response</div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number counter" data-count="12843">0</div>
+            <div class="stat-label">Homes and rentals protected</div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number"><span class="counter" data-count="0.3" data-decimals="1">0</span><span class="stat-sup">%</span></div>
+            <div class="stat-label">False alarm rate</div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="monitoring-visual" data-reveal="right" aria-hidden="true">
-          <div class="dashboard-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1551808525-51a94da548ce?w=600&q=85&auto=format&fit=crop"
-              alt="Security monitoring dashboard"
-              class="dashboard-img"
-              loading="lazy"
-            />
-            <div class="dashboard-overlay glass-card">
-              <div class="dash-row">
-                <div class="dash-dot green" aria-label="Live"></div>
-                <span class="dash-label">LIVE</span>
-                <span class="dash-time">00:04:23</span>
-              </div>
-              <div class="dash-cams">
-                <div class="dash-cam-thumb">
-                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&q=70&auto=format&fit=crop" alt="Front Door cam" loading="lazy"/>
-                  <span>Front Door</span>
+    <!-- ═══ SERVICES PREVIEW ═══ -->
+    <section class="vg-section vg-flush-top" id="services" aria-label="Services">
+      <div class="vg-container">
+<div class="vg-center" data-reveal="up">
+          <span class="section-label">What we protect</span>
+          <h2 class="section-heading">Six services, one verified response</h2>
+          <p class="section-sub">Mix and match. Every monitored plan includes live operator verification, so a real person decides what happens after an alert.</p>
+        </div>
+        <div class="grid-3 vg-mt-4" data-reveal="up">
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="shieldCheck"></span>
+            <h3>Alarm Monitoring</h3>
+            <p>Burglary, fire, medical and duress alarms verified over live video before a single authority is contacted.</p>
+            <a class="link-btn feat-link" href="public/pages/service-details.html?id=alarm-monitoring">See how it works <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="camera"></span>
+            <h3>Smart Cameras</h3>
+            <p>4K outdoor and 2K indoor cameras with person-only alerts, night vision and 30-day cloud retention.</p>
+            <a class="link-btn feat-link" href="public/pages/service-details.html?id=smart-cameras">Explore cameras <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="video"></span>
+            <h3>Video Doorbell</h3>
+            <p>Agents answer your door on a live call, verify guests and log every entry with a timestamp.</p>
+            <a class="link-btn feat-link" href="public/pages/service-details.html?id=video-doorbell">Meet the door <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="lock"></span>
+            <h3>Smart Locks</h3>
+            <p>Keyless entry with fingerprint, PIN and app control, plus auto-relock and guest pass expiry.</p>
+            <a class="link-btn feat-link" href="public/pages/service-details.html?id=smart-locks">Lock down <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="key"></span>
+            <h3>Rental Watch</h3>
+            <p>Per-booking guest rules, one-time digital passes and turnover checks for short-stay properties.</p>
+            <a class="link-btn feat-link" href="public/pages/service-details.html?id=rental-watch">Host with confidence <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="layers"></span>
+            <h3>Home Automation</h3>
+            <p>Scenes, schedules and fail-safe lighting that keep working even when your internet drops.</p>
+            <a class="link-btn feat-link" href="public/pages/service-details.html?id=smart-home-automation">Automate it <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </div>
+        <div class="btn-row vg-mt-4 btn-row-center" data-reveal="up">
+          <a href="public/pages/services.html" class="btn-outline">Compare every service <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MONITORING / HOW IT WORKS ═══ -->
+    <section class="vg-section vg-section-alt" id="how-it-works" aria-label="How VaultGuard works">
+      <div class="vg-container">
+        <div class="split">
+          <div data-reveal="left">
+            <span class="section-label">How it works</span>
+            <h2 class="section-heading">A sensor trips. A human decides.</h2>
+            <p class="section-sub">Automation catches the event, our operators confirm it on live video, and only then does anything escalate. That single decision is why our false alarm rate sits at 0.3%.</p>
+            <div class="steps-mini vg-mt-3">
+              <div class="step-mini">
+                <span class="step-num" aria-hidden="true"></span>
+                <div>
+                  <h4>Detect</h4>
+                  <p>Door contact, motion, glass break or smoke. The panel signals over cellular or Wi-Fi within seconds.</p>
                 </div>
-                <div class="dash-cam-thumb">
-                  <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=100&q=70&auto=format&fit=crop" alt="Backyard cam" loading="lazy"/>
-                  <span>Backyard</span>
+              </div>
+              <div class="step-mini">
+                <span class="step-num" aria-hidden="true"></span>
+                <div>
+                  <h4>Verify</h4>
+                  <p>An operator pulls the camera clip, checks the scene and calls you if anything looks unusual.</p>
+                </div>
+              </div>
+              <div class="step-mini">
+                <span class="step-num" aria-hidden="true"></span>
+                <div>
+                  <h4>Respond</h4>
+                  <p>Pre-authorised fire and medical alerts dispatch immediately. Everything else escalates on your instruction.</p>
+                </div>
+              </div>
+              <div class="step-mini">
+                <span class="step-num" aria-hidden="true"></span>
+                <div>
+                  <h4>Report</h4>
+                  <p>You get a timeline with every action taken, the operator name and any footage kept for 90 days.</p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ═══════════════════════════════════════════
-       HOW IT WORKS
-  ═══════════════════════════════════════════ -->
-  <section class="how-it-works" id="how-it-works" aria-label="How it Works">
-    <div class="hiw-bg" aria-hidden="true">
-      <div class="hiw-glow"></div>
-    </div>
-    <div class="container">
-      <div class="section-label" data-reveal="up">THE PROCESS</div>
-      <h2 class="section-heading" data-reveal="up">Security Made <span class="accent-text">Simple</span></h2>
-
-      <div class="steps-row">
-        <div class="step-item" data-reveal="up" style="--delay:0.1s">
-          <div class="step-number-wrap">
-            <div class="step-number">01</div>
-            <div class="step-ring" aria-hidden="true"></div>
-          </div>
-          <div class="step-connector" aria-hidden="true">
-            <svg viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 10 Q60 2 120 10" stroke="url(#stepLineGrad)" stroke-width="1" stroke-dasharray="4 6"/>
-              <defs>
-                <linearGradient id="stepLineGrad" x1="0" y1="0" x2="120" y2="0">
-                  <stop stop-color="#A855F7" stop-opacity="0.2"/>
-                  <stop offset="0.5" stop-color="#A855F7"/>
-                  <stop offset="1" stop-color="#A855F7" stop-opacity="0.2"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <h3 class="step-title">Choose Your Protection</h3>
-          <p class="step-body">Select the plan and equipment package that fits your home and lifestyle.</p>
-        </div>
-
-        <div class="step-item" data-reveal="up" style="--delay:0.2s">
-          <div class="step-number-wrap">
-            <div class="step-number">02</div>
-            <div class="step-ring" aria-hidden="true"></div>
-          </div>
-          <div class="step-connector" aria-hidden="true">
-            <svg viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 10 Q60 18 120 10" stroke="url(#stepLineGrad2)" stroke-width="1" stroke-dasharray="4 6"/>
-              <defs>
-                <linearGradient id="stepLineGrad2" x1="0" y1="0" x2="120" y2="0">
-                  <stop stop-color="#A855F7" stop-opacity="0.2"/>
-                  <stop offset="0.5" stop-color="#A855F7"/>
-                  <stop offset="1" stop-color="#A855F7" stop-opacity="0.2"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <h3 class="step-title">Install Your System</h3>
-          <p class="step-body">Easy DIY install or professional setup — your system is active within hours.</p>
-        </div>
-
-        <div class="step-item" data-reveal="up" style="--delay:0.3s">
-          <div class="step-number-wrap">
-            <div class="step-number">03</div>
-            <div class="step-ring" aria-hidden="true"></div>
-          </div>
-          <h3 class="step-title">Stay Protected 24/7</h3>
-          <p class="step-body">Our team monitors your home around the clock while you live your life freely.</p>
-        </div>
-      </div>
-
-      <div class="hiw-cta" data-reveal="up">
-        <a href="#plans" class="btn-outline" id="hiwSeeHow">See How It Works →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PLANS PREVIEW
-  ═══════════════════════════════════════════ -->
-  <section class="plans" id="plans" aria-label="Pricing Plans">
-    <div class="container">
-      <div class="section-label" data-reveal="up">PRICING</div>
-      <h2 class="section-heading" data-reveal="up">Protection That <span class="accent-text">Fits Your Home</span></h2>
-
-      <div class="plans-grid">
-        <!-- Essential -->
-        <div class="plan-card glass-card" data-reveal="up" style="--delay:0.1s" id="planEssential">
-          <div class="plan-header">
-            <div class="plan-name">Essential</div>
-            <div class="plan-tagline">Basic smart home protection</div>
-          </div>
-          <div class="plan-price">
-            <span class="plan-currency">$</span>
-            <span class="plan-amount">19</span>
-            <span class="plan-period">/mo</span>
-          </div>
-          <ul class="plan-features" role="list">
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> 2 Smart Cameras</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Motion Sensors</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Mobile App Access</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> 7-Day Cloud Storage</li>
-            <li class="plan-feature plan-feature-muted"><span class="plan-x" aria-hidden="true">–</span> Professional Monitoring</li>
-          </ul>
-          <a href="#" class="btn-plan" id="planEssentialCTA">Get Started</a>
-        </div>
-
-        <!-- Smart — Recommended -->
-        <div class="plan-card plan-card-featured glass-card" data-reveal="up" style="--delay:0.2s" id="planSmart">
-          <div class="plan-badge">Recommended</div>
-          <div class="plan-header">
-            <div class="plan-name">Smart</div>
-            <div class="plan-tagline">Connected security + monitoring</div>
-          </div>
-          <div class="plan-price">
-            <span class="plan-currency">$</span>
-            <span class="plan-amount">39</span>
-            <span class="plan-period">/mo</span>
-          </div>
-          <ul class="plan-features" role="list">
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> 4 Smart Cameras</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Video Doorbell</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Smart Lock Integration</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> 24/7 Pro Monitoring</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> 30-Day Cloud Storage</li>
-          </ul>
-          <a href="#" class="btn-primary btn-plan-featured" id="planSmartCTA">Get Started</a>
-        </div>
-
-        <!-- Complete -->
-        <div class="plan-card glass-card" data-reveal="up" style="--delay:0.3s" id="planComplete">
-          <div class="plan-header">
-            <div class="plan-name">Complete</div>
-            <div class="plan-tagline">Full home protection + advanced monitoring</div>
-          </div>
-          <div class="plan-price">
-            <span class="plan-currency">$</span>
-            <span class="plan-amount">69</span>
-            <span class="plan-period">/mo</span>
-          </div>
-          <ul class="plan-features" role="list">
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Unlimited Cameras</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Full Sensor Suite</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Smart Lock + Alarm</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Priority 24/7 Response</li>
-            <li class="plan-feature"><span class="plan-check" aria-hidden="true">✓</span> Unlimited Cloud Storage</li>
-          </ul>
-          <a href="#" class="btn-plan" id="planCompleteCTA">Get Started</a>
-        </div>
-      </div>
-
-      <div class="plans-cta" data-reveal="up">
-        <a href="#" class="btn-ghost" id="comparePlans">Compare All Plans →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FINAL CTA SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="final-cta" id="final-cta" aria-label="Get Started">
-    <div class="final-cta-bg" aria-hidden="true">
-      <img
-        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop"
-        alt=""
-        class="final-cta-bg-img"
-        loading="lazy"
-      />
-      <div class="final-cta-overlay" aria-hidden="true"></div>
-      <!-- Decorative glow -->
-      <div class="final-glow-1" aria-hidden="true"></div>
-      <div class="final-glow-2" aria-hidden="true"></div>
-    </div>
-
-    <div class="container final-cta-content" data-reveal="up">
-      <div class="section-label light">TAKE ACTION</div>
-      <h2 class="final-heading">Your Home Deserves<br /><span class="accent-text">24/7 Protection.</span></h2>
-      <p class="final-subtext">Take the first step toward a safer, smarter home.</p>
-      <div class="final-btns">
-        <a href="#plans" class="btn-primary btn-lg" id="finalGetProtected">
-          Get Protected
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="tel:+18005550199" class="btn-ghost btn-lg" id="finalTalkExpert">Talk to an Expert</a>
-      </div>
-      <div class="final-phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        <a href="tel:+18005550199">1-800-555-0199</a>
-        <span class="final-phone-sub">— Available 24/7</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
-  <footer class="footer" id="footer" role="contentinfo">
-    <div class="footer-top-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <a href="#" class="nav-logo footer-logo" aria-label="VaultGuard Home">
-            <div class="logo-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2L4 7V15C4 21.6 9.2 27.8 16 30C22.8 27.8 28 21.6 28 15V7L16 2Z" fill="url(#footerLogoGrad)"/>
-                <path d="M12 16L15 19L21 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <defs>
-                  <linearGradient id="footerLogoGrad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#A855F7"/>
-                    <stop offset="1" stop-color="#6D28D9"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+            <div class="btn-row vg-mt-3">
+              <a href="public/pages/service-details.html?id=alarm-monitoring" class="btn-outline">See monitoring detail <span aria-hidden="true">&rarr;</span></a>
             </div>
-            <span class="logo-text">VaultGuard</span>
-          </a>
-          <p class="footer-desc">
-            Professional-grade residential security powered by smart technology and 24/7 expert monitoring. Protecting families across the country.
-          </p>
-          <div class="footer-socials" aria-label="Social media">
-            <a href="#" class="social-icon" aria-label="Twitter/X">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 5.896zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
           </div>
-        </div>
-
-        <!-- Products -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Products</h4>
-          <ul class="footer-links" role="list">
-            <li><a href="#solutions" class="footer-link">Security Cameras</a></li>
-            <li><a href="#solutions" class="footer-link">Video Doorbells</a></li>
-            <li><a href="#solutions" class="footer-link">Smart Locks</a></li>
-            <li><a href="#solutions" class="footer-link">Motion Sensors</a></li>
-            <li><a href="#solutions" class="footer-link">Door & Window Sensors</a></li>
-          </ul>
-        </div>
-
-        <!-- Company -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Company</h4>
-          <ul class="footer-links" role="list">
-            <li><a href="#about" class="footer-link">About Us</a></li>
-            <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
-            <li><a href="#plans" class="footer-link">Plans & Pricing</a></li>
-            <li><a href="#footer" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Support -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Support</h4>
-          <ul class="footer-links" role="list">
-            <li><a href="auth/login.html" class="footer-link">Login</a></li>
-            <li><a href="#" class="footer-link">Help Center</a></li>
-            <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#" class="footer-link">Terms of Service</a></li>
-          </ul>
-          <div class="footer-contact">
-            <a href="tel:+18005550199" class="footer-phone">1-800-555-0199</a>
-            <a href="mailto:hello@vaultguard.com" class="footer-email">hello@vaultguard.com</a>
+          <div data-reveal="right">
+            <div class="glass-card" style="padding:28px">
+              <div class="dash-cams" style="margin-bottom:22px">
+                <div class="dash-cam-thumb" style="background-image:url('assets/img/ph-camera.svg')"></div>
+                <div>
+                  <span class="dash-label">Live verification</span>
+                  <span class="dash-time">00:04:12 elapsed</span>
+                </div>
+                <span class="dash-dot green" aria-hidden="true"></span>
+              </div>
+              <ul class="tick-list">
+                <li><span data-icon="checkCircle" data-icon-class="w-4 h-4"></span><span>Zone 2 confirmed by camera, front door</span></li>
+                <li><span data-icon="checkCircle" data-icon-class="w-4 h-4"></span><span>Owner notified, call answered on first ring</span></li>
+                <li><span data-icon="checkCircle" data-icon-class="w-4 h-4"></span><span>No dispatch required, event closed</span></li>
+              </ul>
+              <div class="note vg-mt-3"><span data-icon="lightbulb" data-icon-class="w-4 h-4"></span><span><strong>Median 27 seconds.</strong> Every delay above 55 seconds appears in your monthly SLA report.</span></div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <p class="footer-copy">© 2026 VaultGuard Security. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cookie Policy</a>
+    <!-- ═══ WHY VAULTGUARD ═══ -->
+    <section class="vg-section" id="why" aria-label="Why VaultGuard">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Why VaultGuard</span>
+          <h2 class="section-heading">Built for people who cannot be unmonitored</h2>
+          <p class="section-sub">No outsourced call centres, no surprise per-camera fees, no three-year contracts.</p>
+        </div>
+        <div class="grid-4 vg-mt-4" data-reveal="up">
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="headset"></span>
+            <h3>In-house operators</h3>
+            <p>Background-checked, TMA-certified staff in Austin. We can name the operator on every event.</p>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="clock"></span>
+            <h3>27 second response</h3>
+            <p>Panel signal to a live human voice, measured monthly and published to subscribers.</p>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="database"></span>
+            <h3>Evidence that holds up</h3>
+            <p>90-day retention on verified incidents, with an exportable timeline for insurers and police.</p>
+          </article>
+          <article class="vg-card vg-card-hover feat-card">
+            <span class="feat-ico" data-icon="dollar"></span>
+            <h3>Honest pricing</h3>
+            <p>One flat monitoring fee. Extra cameras are $8 a month, dispatch is always included.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
+    <!-- ═══ PLANS PREVIEW ═══ -->
+    <section class="vg-section vg-section-alt" id="plans" aria-label="Plans">
+      <div class="vg-container">
+        <div class="split">
+          <div data-reveal="left">
+            <span class="section-label">Pricing</span>
+            <h2 class="section-heading">Five plans. Thirty days free on all of them.</h2>
+            <p class="section-sub">Start free, decide with real data. We call on day 25 with a summary of what triggered, then you choose. Monthly plans have no contract.</p>
+            <ul class="tick-list vg-mt-3">
+              <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Monitoring starts at $19 a month with video verification</span></li>
+              <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Dispatch, cellular backup and 30-day storage included</span></li>
+              <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Free Watch plan that never expires</span></li>
+            </ul>
+            <div class="btn-row vg-mt-3">
+              <a href="public/pages/pricing.html" class="btn-primary">See full pricing <span aria-hidden="true">&rarr;</span></a>
+              <a href="public/auth/signup.html" class="btn-ghost">Start free trial</a>
+            </div>
+          </div>
+          <div class="grid-2" data-reveal="right" style="gap:18px">
+            <article class="vg-card plan"><span class="plan-flag">Free</span><h3 class="plan-name">Watch</h3><div class="plan-price"><span class="cur">$</span><span class="amt">0</span><span class="per">/forever</span></div><p class="plan-blurb">Two cameras or one doorbell, app alerts and seven days of clips.</p></article>
+            <article class="vg-card plan is-featured"><span class="plan-flag">Most popular</span><h3 class="plan-name">Smart</h3><div class="plan-price"><span class="cur">$</span><span class="amt">39</span><span class="per">/month</span></div><p class="plan-blurb">Six cameras, doorbell agent greeting and locks.</p></article>
+            <article class="vg-card plan"><span class="plan-flag">Landlord</span><h3 class="plan-name">Estate</h3><div class="plan-price"><span class="cur">$</span><span class="amt">149</span><span class="per">/month</span></div><p class="plan-blurb">Portfolio management, unlimited storage, API access.</p></article>
+            <article class="vg-card plan"><span class="plan-flag">Addon</span><h3 class="plan-name">Extra camera</h3><div class="plan-price"><span class="cur">$</span><span class="amt">8</span><span class="per">/month</span></div><p class="plan-blurb">Add a camera to any plan, no activation fee.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BLOG PREVIEW ═══ -->
+    <section class="vg-section" id="journal" aria-label="From the journal">
+      <div class="vg-container">
+        <div class="filter-bar" data-reveal="up">
+          <div>
+            <span class="section-label">From the desk</span>
+            <h2 class="section-heading">Security briefings that stay short</h2>
+          </div>
+          <a href="public/pages/blog.html" class="btn-outline">All articles <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="grid-3" data-reveal="up">
+          <article class="vg-card vg-card-hover post-card">
+            <div class="post-media"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=70" alt="Technician installing a camera above a doorway" loading="lazy" data-fb="assets/img/ph-camera.svg" /><span class="post-cat">Getting started</span></div>
+            <div class="post-body">
+              <h3>Setting up monitored security in one afternoon</h3>
+              <p>Panel placement, camera angles and the three settings that cut false alarms before your first night.</p>
+              <div class="post-meta"><span>8 min read</span><span class="post-author"><span class="avatar avatar-mini">M</span>Marcus Idowu</span></div>
+            </div>
+          </article>
+          <article class="vg-card vg-card-hover post-card">
+            <div class="post-media"><img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=900&q=70" alt="Camera feed showing a monitored driveway" loading="lazy" data-fb="assets/img/ph-camera.svg" /><span class="post-cat">Monitoring</span></div>
+            <div class="post-body">
+              <h3>What a real 27-second response looks like</h3>
+              <p>A full event timeline, unedited, from panel signal to the operator reading the scene.</p>
+              <div class="post-meta"><span>6 min read</span><span class="post-author"><span class="avatar avatar-mini">D</span>Daniela Reyes</span></div>
+            </div>
+          </article>
+          <article class="vg-card vg-card-hover post-card">
+            <div class="post-media"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=70" alt="Short term rental entry with a smart lock" loading="lazy" data-fb="assets/img/ph-home.svg" /><span class="post-cat">Rentals</span></div>
+            <div class="post-body">
+              <h3>Guest verification for short-stay properties</h3>
+              <p>One-time passes, per-booking rules and the turnover checks hosts keep asking about.</p>
+              <div class="post-meta"><span>7 min read</span><span class="post-author"><span class="avatar avatar-mini">A</span>Amina Haddad</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTIMONIAL ═══ -->
+    <section class="vg-section vg-section-alt" aria-label="Customer story">
+      <div class="vg-container">
+        <div class="grid-2" data-reveal="up">
+          <article class="vg-card quote-card">
+            <div class="quote-mark" data-icon="message" data-icon-class="w-7 h-7"></div>
+            <div class="stars" aria-label="5 out of 5 stars"><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span></div>
+            <p class="quote-text">We run nine units across Austin and Denver. In the first quarter the guest rule violations dropped by half, and turnover night no longer means anyone has to sleep on the sofa.</p>
+            <div class="quote-who"><span class="avatar">AR</span><div><strong>Aurora Reyes</strong><small>Portfolio manager, 9 units</small></div></div>
+          </article>
+          <article class="vg-card quote-card">
+            <div class="quote-mark" data-icon="shieldCheck" data-icon-class="w-7 h-7"></div>
+            <div class="stars" aria-label="5 out of 5 stars"><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span><span data-icon="star" data-icon-class="w-4 h-4"></span></div>
+            <p class="quote-text">I tested them on purpose at 2am. The operator knew my name, knew the dog was home and offered to stay on the line until the patrol unit arrived. That is the whole product.</p>
+            <div class="quote-who"><span class="avatar">TK</span><div><strong>Tobias Krüger</strong><small>Homeowner, Portland OR</small></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="vg-section vg-flush-bottom" aria-label="Get started">
+      <div class="vg-container">
+        <div class="cta-band vg-center" data-reveal="up">
+          <span class="vg-eyebrow"><span data-icon="gift" data-icon-class="w-4 h-4"></span>30 day trial, no card</span>
+          <h2 class="section-heading vg-mt-2">Start with a free plan, graduate when it earns it</h2>
+          <p class="lead vg-mt-2">Two cameras or one doorbell, forever free. Move up the moment you want a human watching with you.</p>
+          <div class="btn-row btn-row-center vg-mt-3">
+            <a href="public/auth/signup.html" class="btn-primary">Create free account <span aria-hidden="true">&rarr;</span></a>
+            <a href="public/pages/contact.html" class="btn-ghost">Book a 15 min call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+
+  <script src="src/js/icons.js"></script>
+  <script src="src/js/site-data.js"></script>
+  <script src="src/js/data/services.js"></script>
+  <script src="src/js/data/plans.js"></script>
+  <script src="src/js/data/posts.js"></script>
+  <script src="src/js/data/faqs.js"></script>
+  <script src="src/js/core.js"></script>
+  <script src="src/js/theme.js"></script>
+  <script src="src/js/rtl.js"></script>
+  <script src="src/js/form-validation.js"></script>
+  <script src="src/js/navbar.js"></script>
+  <script src="src/js/footer.js"></script>
   <script src="src/js/main.js"></script>
 </body>
 </html>

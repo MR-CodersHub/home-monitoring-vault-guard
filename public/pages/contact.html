@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | VaultGuard Monitoring Desk</title>
+  <meta name="description" content="Talk to the VaultGuard monitoring desk: sales, technical support, partnerships and press. Replies within one business hour." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <script src="../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-navbar></div>
+
+  <main id="main">
+    <section class="page-hero" aria-label="Contact">
+      <div class="vg-container vg-center">
+        <nav class="crumbs vg-center" aria-label="Breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span data-icon="chevRight" data-icon-class="w-3.5 h-3.5"></span>
+          <span aria-current="page">Contact</span>
+        </nav>
+        <h1 class="section-heading">Talk to the desk, not a bot</h1>
+        <p class="lead vg-sub">Sales, technical support, partnerships and press all land in the same queue. A specialist replies within one business hour, around the clock.</p>
+        <div class="btn-row btn-row-center vg-mt-3">
+          <a href="tel:+18005550199" class="btn-primary">Call +1 (800) 555-0199</a>
+          <a href="mailto:hello@vaultguard.com" class="btn-ghost">hello@vaultguard.com</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-flush-top" aria-label="Contact form">
+      <div class="vg-container split">
+        <div class="form-card vg-card" data-reveal="left">
+          <div class="form-head">
+            <h2>Send us a message</h2>
+            <p>Tell us about the property and the concern. We reply by email and phone, whichever you prefer.</p>
+          </div>
+          <form data-form="contact" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label class="label" for="cName">Full name</label>
+                <input class="input" type="text" id="cName" name="name" placeholder="Alex Morgan" data-label="Name" autocomplete="name" required />
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label class="label" for="cEmail">Email</label>
+                <input class="input" type="email" id="cEmail" name="email" placeholder="you@domain.com" data-label="Email" autocomplete="email" required />
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label class="label" for="cPhone">Phone <span class="label-hint">(optional)</span></label>
+                <input class="input" type="tel" id="cPhone" name="phone" placeholder="+1 512 555 0142" data-label="Phone" autocomplete="tel" />
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label class="label" for="cTopic">Reason for contact</label>
+                <span class="field-select">
+                  <select class="select" id="cTopic" name="topic" data-label="Topic" required>
+                    <option value="">Choose one</option>
+                    <option value="quote">Request a fixed quote</option>
+                    <option value="install">Installation scheduling</option>
+                    <option value="support">Technical support</option>
+                    <option value="partners">Partnerships and property managers</option>
+                    <option value="press">Press</option>
+                  </select>
+                  <span data-icon="chevDown" data-icon-class="w-4 h-4"></span>
+                </span>
+                <p class="field-error"></p>
+              </div>
+              <div class="field field-full">
+                <label class="label" for="cProperty">Property</label>
+                <input class="input" type="text" id="cProperty" name="property" placeholder="Street address, city, or unit count" data-label="Property" />
+                <p class="field-error"></p>
+              </div>
+              <div class="field field-full">
+                <label class="label" for="cMessage">Message</label>
+                <textarea class="textarea" id="cMessage" name="message" placeholder="What do you need protected, and is anyone on site today?" data-label="Message" minlength="20" required></textarea>
+                <p class="field-error"></p>
+              </div>
+              <div class="field field-full">
+                <label class="checkbox"><input type="checkbox" name="consent" data-label="Consent" required /><span>I agree that VaultGuard may contact me about this enquiry. No marketing list, no reselling of details.</span></label>
+                <p class="field-error"></p>
+              </div>
+            </div>
+            <div class="btn-row">
+              <button class="btn-primary" type="submit">Send message <span aria-hidden="true">&rarr;</span></button>
+              <button class="btn-ghost" type="reset">Clear</button>
+            </div>
+            <p class="form-msg" data-form-msg role="status"></p>
+            <div data-form-success>
+              <strong>Message on its way</strong>
+              Your enquiry is queued with the Austin desk. Expect a reply within one business hour, and a call if you left a number.
+            </div>
+          </form>
+        </div>
+
+        <div class="form-side" data-reveal="right">
+          <div class="info-list">
+            <div class="info-row"><span class="feat-ico" data-icon="phone"></span><div><strong>Monitoring desk</strong><a href="tel:+18005550199">+1 (800) 555-0199</a></div></div>
+            <div class="info-row"><span class="feat-ico" data-icon="mail"></span><div><strong>General enquiries</strong><a href="mailto:hello@vaultguard.com">hello@vaultguard.com</a></div></div>
+            <div class="info-row"><span class="feat-ico" data-icon="headset"></span><div><strong>Technical support</strong><a href="mailto:support@vaultguard.com">support@vaultguard.com</a></div></div>
+            <div class="info-row"><span class="feat-ico" data-icon="briefcase"></span><div><strong>Portfolios and partners</strong><a href="mailto:sales@vaultguard.com">sales@vaultguard.com</a></div></div>
+          </div>
+          <div class="map-panel">
+            <div class="map-grid-overlay" aria-hidden="true"></div>
+            <div class="map-pin" aria-hidden="true"><span data-icon="mapPin" data-icon-class="w-7 h-7"></span></div>
+            <div class="map-card">
+              <strong>VaultGuard Operations Center</strong>
+              <p>2400 South Lamar Blvd, Suite 300<br />Austin, TX 78704 &middot; United States</p>
+            </div>
+          </div>
+          <div class="note"><span data-icon="clock" data-icon-class="w-4 h-4"></span><span><strong>Desk hours:</strong> staffed 24 hours a day, every day including holidays. Office visits by appointment, 8am to 6pm CT.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section" aria-label="Support pathways">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Faster routes</span>
+          <h2 class="section-heading">Three ways to reach a person</h2>
+          <p class="section-sub">Pick whichever suits the problem. All three land in the same shift notes.</p>
+        </div>
+        <div class="grid-3 vg-mt-4" data-reveal="up">
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="message"></span><h3>Live chat</h3><p>The fastest route for quotes, plan changes and portal questions. Typical wait under four minutes.</p><ul class="tick-list"><li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Average first reply 3 min</span></li><li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Transcript emailed to you</span></li></ul></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="phone"></span><h3>Phone</h3><p>The right route for anything urgent on a live alert, or for a property with a tricky layout.</p><ul class="tick-list"><li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Answered on the first ring</span></li><li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Call recording kept for 30 days</span></li></ul></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="send"></span><h3>Email</h3><p>Best for quotes with documents, permit questions, and anything that needs a paper trail.</p><ul class="tick-list"><li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>One business hour reply</span></li><li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Same thread for follow-ups</span></li></ul></article>
+        </div>
+      </div>
+    </section>
+    <section class="vg-section vg-section-alt" aria-label="Departments">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Who picks this up</span>
+          <h2 class="section-heading">Real departments, no shared inbox roulette</h2>
+        </div>
+        <div class="grid-4 vg-mt-4" data-reveal="up">
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="user"></span><h3>New customers</h3><p>Surveys, fixed quotes and trial questions. Average reply 22 minutes.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="wrench"></span><h3>Installations</h3><p>Rescheduling, hardware returns and access. Average reply 14 minutes.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="bell"></span><h3>Monitoring desk</h3><p>Live alerts and account changes. Answered on the phone within one ring.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="file"></span><h3>Press and legal</h3><p>Media requests, incident records and compliance documents.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section" aria-label="Office">
+      <div class="vg-container split">
+        <div data-reveal="left">
+          <span class="section-label">Visit</span>
+          <h2 class="section-heading">Come see the desk work</h2>
+          <p class="section-sub">Tours run Monday to Thursday, 10am and 3pm. You will watch a live verification from the operator floor, then walk the hardware lab.</p>
+          <ul class="tick-list vg-mt-3">
+            <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>45 minute tour, no sales script</li>
+            <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Bring your floor plan for a free coverage review</li>
+            <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Accessibility: step-free entry and hearing loop at reception</li>
+          </ul>
+          <div class="btn-row vg-mt-3">
+            <a href="mailto:hello@vaultguard.com?subject=Office%20tour" class="btn-primary">Book a tour</a>
+            <a href="services.html" class="btn-ghost">Browse services</a>
+          </div>
+        </div>
+        <div data-reveal="right">
+          <div class="grid-2" style="gap:18px">
+            <article class="vg-card stat-mini"><span class="stat-num" style="font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--accent-bright)">22 min</span><span>Median first reply</span></article>
+            <article class="vg-card stat-mini"><span class="stat-num" style="font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--accent-bright)">98%</span><span>Queries closed same day</span></article>
+            <article class="vg-card stat-mini"><span class="stat-num" style="font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--accent-bright)">2</span><span>Languages on the desk</span></article>
+            <article class="vg-card stat-mini"><span class="stat-num" style="font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--accent-bright)">24/7</span><span>Staffed, no overnight gap</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+
+  <script src="../../src/js/icons.js"></script>
+  <script src="../../src/js/site-data.js"></script>
+  <script src="../../src/js/data/services.js"></script>
+  <script src="../../src/js/data/plans.js"></script>
+  <script src="../../src/js/data/posts.js"></script>
+  <script src="../../src/js/data/faqs.js"></script>
+  <script src="../../src/js/core.js"></script>
+  <script src="../../src/js/theme.js"></script>
+  <script src="../../src/js/rtl.js"></script>
+  <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/navbar.js"></script>
+  <script src="../../src/js/footer.js"></script>
+  <script src="../../src/js/main.js"></script>
+</body>
+</html>

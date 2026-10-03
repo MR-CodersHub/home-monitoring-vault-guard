@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Console | VaultGuard Operations</title>
+  <meta name="description" content="VaultGuard internal console: revenue, alert queue, subscribers, desk staffing and support tickets." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../src/css/style.css" />
+  <script src="../../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="dash-layout">
+    <div data-dash-side></div>
+
+    <main id="main" class="dash-main">
+      <header class="dash-head">
+        <div>
+          <h1>Good shift, Aisha</h1>
+          <p class="dash-sub">Live figures for the Austin desk. Everything here is demo data with realistic shape.</p>
+        </div>
+        <div class="dash-head-actions">
+          <span class="dash-clock" data-dash-clock>--:--:-- CT</span>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme"></button>
+          <button class="icon-btn" type="button" data-dir-toggle aria-label="Toggle text direction"></button>
+          <a class="btn-ghost btn-compact" href="../login.html">Sign out</a>
+        </div>
+      </header>
+
+      <section id="overview" class="dash-section" aria-label="Overview">
+        <div class="dash-section-head">
+          <h2><span data-icon="grid" data-icon-class="w-5 h-5"></span>Overview</h2>
+          <span class="result-count">Figures update every few seconds</span>
+        </div>
+        <div data-kpi></div>
+        <div class="dash-panels vg-mt-3">
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Recurring revenue</h3>
+              <span class="tag-row" data-range-group role="tablist" aria-label="Chart range">
+                <button type="button" class="btn-ghost btn-compact" data-range="7d" role="tab" aria-selected="false">7d</button>
+                <button type="button" class="btn-ghost btn-compact" data-range="30d" role="tab" aria-selected="false">30d</button>
+                <button type="button" class="btn-ghost btn-compact is-active" data-range="12m" role="tab" aria-selected="true">12m</button>
+              </span>
+            </div>
+            <div data-revenue-chart></div>
+            <div class="spark" data-revenue-spark></div>
+          </article>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Plan mix</h3>
+            </div>
+            <div data-plan-donut></div>
+          </article>
+        </div>
+        <article class="dash-card vg-card vg-mt-3">
+          <div class="panel-head">
+            <h3>Console activity</h3>
+          </div>
+          <ul class="feed" data-activity-feed></ul>
+        </article>
+      </section>
+
+      <section id="revenue" class="dash-section" aria-label="Revenue">
+        <div class="dash-section-head">
+          <h2><span data-icon="dollar" data-icon-class="w-5 h-5"></span>Revenue</h2>
+          <span class="result-count">Recognised, not invoiced</span>
+        </div>
+        <div class="dash-panels">
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Billing volume</h3>
+              <a class="btn-ghost btn-compact" href="#tickets">Export CSV</a>
+            </div>
+            <div class="table-scroll">
+              <table class="vtable dash-table">
+                <thead><tr><th scope="col">Month</th><th scope="col">Recognised</th><th scope="col">Collected</th><th scope="col">Growth</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Jul 2026</th><td>$489,000</td><td>$481,400</td><td><span class="tag tag-mint">+5.9%</span></td></tr>
+                  <tr><th scope="row">Aug 2026</th><td>$503,000</td><td>$497,110</td><td><span class="tag tag-mint">+2.9%</span></td></tr>
+                  <tr><th scope="row">Sep 2026</th><td>$538,240</td><td>$531,902</td><td><span class="tag tag-mint">+7.0%</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Revenue composition</h3>
+            </div>
+            <ul class="usage">
+              <li class="usage-row"><span>Subscriptions</span><strong>$512,880</strong></li>
+              <li class="usage-row"><span>Equipment</span><strong>$18,400</strong></li>
+              <li class="usage-row"><span>Add-on storage</span><strong>$4,960</strong></li>
+              <li class="usage-row"><span>Installation</span><strong>$2,000</strong></li>
+              <li class="usage-row"><span>Total</span><strong>$538,240</strong></li>
+            </ul>
+            <p class="form-note"><span data-icon="info" data-icon-class="w-4 h-4"></span><span>Dispatch is never billed, so it contributes nothing here by design.</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="alerts" class="dash-section" aria-label="Alert queue">
+        <div class="dash-section-head">
+          <h2><span data-icon="alert" data-icon-class="w-5 h-5"></span>Alert queue</h2>
+          <span class="result-count">Seven open right now</span>
+        </div>
+        <article class="dash-card vg-card">
+          <div class="panel-head">
+            <h3>Live alerts</h3>
+          </div>
+          <div class="dash-toolbar">
+            <span class="search-inline">
+              <span data-icon="search" data-icon-class="w-4 h-4"></span>
+              <input class="input" type="search" placeholder="Search property or event" aria-label="Search alerts" data-table-search />
+            </span>
+            <span class="field-select">
+              <select class="select" data-table-filter="sev" aria-label="Filter by severity">
+                <option value="">All severities</option>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+              <span data-icon="chevDown" data-icon-class="w-4 h-4"></span>
+            </span>
+            <span class="field-select">
+              <select class="select" data-table-filter="status" aria-label="Filter by status">
+                <option value="">All statuses</option>
+                <option value="Dispatched">Dispatched</option>
+                <option value="Verified">Verified</option>
+                <option value="Pending">Pending</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Resolved">Resolved</option>
+                <option value="Open">Open</option>
+              </select>
+              <span data-icon="chevDown" data-icon-class="w-4 h-4"></span>
+            </span>
+            <span class="result-count" data-table-count>0 of 0 rows</span>
+          </div>
+          <div data-alert-table></div>
+        </article>
+      </section>
+
+      <section id="subscribers" class="dash-section" aria-label="Subscribers">
+        <div class="dash-section-head">
+          <h2><span data-icon="users" data-icon-class="w-5 h-5"></span>Subscribers</h2>
+          <span class="result-count">412 trials in progress</span>
+        </div>
+        <article class="dash-card vg-card">
+          <div class="panel-head">
+            <h3>Recent signups</h3>
+          </div>
+          <div data-signup-table></div>
+        </article>
+      </section>
+
+      <section id="desk" class="dash-section" aria-label="Desk and agents">
+        <div class="dash-section-head">
+          <h2><span data-icon="headset" data-icon-class="w-5 h-5"></span>Desk &amp; agents</h2>
+          <span class="result-count">Five shown, 38 across all shifts</span>
+        </div>
+        <div class="dash-panels">
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>On the floor</h3>
+            </div>
+            <ul class="agent-list" data-agent-list></ul>
+          </article>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Console preferences</h3>
+            </div>
+            <ul class="pref-list" data-prefs>
+              <li class="pref-row">
+                <span><strong>Sound on new alert</strong><small>Audible chime per incoming verified event</small></span>
+                <label class="switch" data-switch data-switch-label="Alert sound"><input type="checkbox" checked aria-label="Alert sound" /><span class="track"></span></label>
+              </li>
+              <li class="pref-row">
+                <span><strong>Auto-assign owner</strong><small>Round-robin new alerts to the least loaded operator</small></span>
+                <label class="switch" data-switch data-switch-label="Auto-assign"><input type="checkbox" checked aria-label="Auto-assign owner" /><span class="track"></span></label>
+              </li>
+              <li class="pref-row">
+                <span><strong>Guest verification first</strong><small>Prioritise Smart Rentals events in the queue</small></span>
+                <label class="switch" data-switch data-switch-label="Rental priority"><input type="checkbox" aria-label="Prioritise rental events" /><span class="track"></span></label>
+              </li>
+              <li class="pref-row">
+                <span><strong>Coverage reminder</strong><small>Nudge on Friday for uncovered overnight shifts</small></span>
+                <label class="switch" data-switch data-switch-label="Coverage reminder"><input type="checkbox" checked aria-label="Coverage reminder" /><span class="track"></span></label>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="tickets" class="dash-section" aria-label="Tickets">
+        <div class="dash-section-head">
+          <h2><span data-icon="ticket" data-icon-class="w-5 h-5"></span>Tickets</h2>
+          <a class="btn-primary btn-compact" href="../../pages/contact.html">New ticket</a>
+        </div>
+        <article class="dash-card vg-card">
+          <div class="panel-head">
+            <h3>Open support tickets</h3>
+          </div>
+          <div data-ticket-table></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="../../../src/js/icons.js"></script>
+  <script src="../../../src/js/site-data.js"></script>
+  <script src="../../../src/js/data/services.js"></script>
+  <script src="../../../src/js/data/plans.js"></script>
+  <script src="../../../src/js/data/posts.js"></script>
+  <script src="../../../src/js/data/faqs.js"></script>
+  <script src="../../../src/js/core.js"></script>
+  <script src="../../../src/js/theme.js"></script>
+  <script src="../../../src/js/rtl.js"></script>
+  <script src="../../../src/js/form-validation.js"></script>
+  <script src="../../../src/js/dashboard.js"></script>
+  <script src="../../../src/js/admin-dashboard.js"></script>
+  <script src="../../../src/js/main.js"></script>
+</body>
+</html>

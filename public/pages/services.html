@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | VaultGuard Home Security</title>
+  <meta name="description" content="Explore VaultGuard services: alarm monitoring, smart cameras, video doorbells, smart locks, rental watch and home automation. Filter by category or search." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <script src="../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-navbar></div>
+
+  <main id="main">
+    <section class="page-hero" aria-label="Services">
+      <div class="vg-container vg-center">
+        <nav class="crumbs vg-center" aria-label="Breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span data-icon="chevRight" data-icon-class="w-3.5 h-3.5"></span>
+          <span aria-current="page">Services</span>
+        </nav>
+        <h1 class="section-heading">Every service, verified by a human</h1>
+        <p class="lead vg-sub">Six ways VaultGuard protects a property. Pick one, combine them, and every alert still lands with an operator who can see what is happening.</p>
+        <div class="btn-row btn-row-center vg-mt-3">
+          <a href="pricing.html" class="btn-primary">Compare plans <span aria-hidden="true">&rarr;</span></a>
+          <a href="contact.html" class="btn-ghost">Ask an engineer</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-flush-top" aria-label="All services">
+      <div class="vg-container">
+        <div class="filter-bar" data-reveal="up">
+          <div class="chip-row" data-service-filters role="group" aria-label="Filter services by category"></div>
+          <div class="search-inline">
+            <span data-icon="search" data-icon-class="w-4 h-4"></span>
+            <input class="input" type="search" placeholder="Search services" aria-label="Search services" data-service-search />
+          </div>
+        </div>
+        <p class="result-count" data-service-count aria-live="polite"></p>
+        <div class="grid-3 vg-mt-2" data-services-grid></div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-section-alt" aria-label="Included with every service">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Always included</span>
+          <h2 class="section-heading">Add any service, keep these four</h2>
+        </div>
+        <div class="grid-4 vg-mt-4" data-reveal="up">
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="headset"></span><h3>Operator verification</h3><p>Live human review of every alert, with the operator name in the log.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="wifi"></span><h3>Cellular failover</h3><p>Alarms still report when the internet is down or the ISP is slow to restore.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="database"></span><h3>90-day incident archive</h3><p>Verified event footage kept for 90 days on every plan for police and insurers.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="shieldCheck"></span><h3>Permit compliance</h3><p>We track local alarm permit renewals so your city registration stays valid.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section" aria-label="Comparison">
+      <div class="vg-container">
+        <div class="filter-bar" data-reveal="up">
+          <div>
+            <span class="section-label">Before you choose</span>
+            <h2 class="section-heading">Self-monitoring vs VaultGuard</h2>
+          </div>
+        </div>
+        <div class="compare-strip vg-card" data-reveal="up">
+          <div class="compare-col">
+            <h3><span data-icon="x" data-icon-class="w-5 h-5"></span>App-only alerts</h3>
+            <ul class="tick-list tick-muted">
+              <li><span data-icon="x" data-icon-class="w-4 h-4"></span><span>You are the first responder, at 3am or while travelling</span></li>
+              <li><span data-icon="x" data-icon-class="w-4 h-4"></span><span>No verification, so more false dispatches</span></li>
+              <li><span data-icon="x" data-icon-class="w-4 h-4"></span><span>Footage typically deleted after 7 to 30 days</span></li>
+            </ul>
+          </div>
+          <div class="compare-col is-good">
+            <h3><span data-icon="checkCircle" data-icon-class="w-5 h-5"></span>VaultGuard monitored</h3>
+            <ul class="tick-list">
+              <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Named operator answers in a median 27 seconds</span></li>
+              <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Video verified before any authority is contacted</span></li>
+              <li><span data-icon="check" data-icon-class="w-4 h-4"></span><span>Verified incidents retained 90 days, exportable</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-section-alt" aria-label="Rollout process">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Rollout</span>
+          <h2 class="section-heading">Live within 24 hours of the survey</h2>
+          <p class="section-sub">Standard installs take 90 minutes to three hours depending on cabling.</p>
+        </div>
+        <div class="steps-mini vg-mt-4" style="max-width:760px;margin-inline:auto" data-reveal="up">
+          <div class="step-mini"><span class="step-num" aria-hidden="true"></span><div><h4>Free site survey</h4><p>We map coverage, cable routes and panel placement, then send a fixed quote. No obligation.</p></div></div>
+          <div class="step-mini"><span class="step-num" aria-hidden="true"></span><div><h4>Install and pairing</h4><p>Certified installer fits hardware, wires contacts and pairs every device to your account.</p></div></div>
+          <div class="step-mini"><span class="step-num" aria-hidden="true"></span><div><h4>Detection tuning</h4><p>We test every zone with you in the house, then adjust sensitivity so pets and wind stop triggering.</p></div></div>
+          <div class="step-mini"><span class="step-num" aria-hidden="true"></span><div><h4>Monitoring live</h4><p>Your panel goes live on the desk. You get the verification number and a walkthrough of the app.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section" aria-label="Service questions">
+      <div class="vg-container">
+        <div class="faq-hero-cta vg-card" data-reveal="up">
+          <div>
+            <h2 class="section-heading">Which services do I actually need?</h2>
+            <p>Most single-family homes start with monitoring plus two cameras. Rentals add a doorbell and per-booking guest rules.</p>
+          </div>
+          <div class="btn-row">
+            <a href="FAQ.html" class="btn-outline">Read the FAQ</a>
+            <a href="contact.html" class="btn-primary">Ask an engineer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-flush-bottom" aria-label="Get started">
+      <div class="vg-container">
+        <div class="cta-band vg-center" data-reveal="up">
+          <span class="vg-eyebrow"><span data-icon="shieldCheck" data-icon-class="w-4 h-4"></span>No contracts on monthly</span>
+          <h2 class="section-heading vg-mt-2">Get a fixed quote for your property</h2>
+          <p class="lead vg-mt-2">Tell us the address and we will map the coverage before you spend anything.</p>
+          <div class="btn-row btn-row-center vg-mt-3">
+            <a href="../auth/signup.html" class="btn-primary">Start free trial <span aria-hidden="true">&rarr;</span></a>
+            <a href="pricing.html" class="btn-ghost">See pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+
+  <script src="../../src/js/icons.js"></script>
+  <script src="../../src/js/site-data.js"></script>
+  <script src="../../src/js/data/services.js"></script>
+  <script src="../../src/js/data/plans.js"></script>
+  <script src="../../src/js/data/posts.js"></script>
+  <script src="../../src/js/data/faqs.js"></script>
+  <script src="../../src/js/core.js"></script>
+  <script src="../../src/js/theme.js"></script>
+  <script src="../../src/js/rtl.js"></script>
+  <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/services-page.js"></script>
+  <script src="../../src/js/navbar.js"></script>
+  <script src="../../src/js/footer.js"></script>
+  <script src="../../src/js/main.js"></script>
+</body>
+</html>

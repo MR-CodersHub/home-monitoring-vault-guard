@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | VaultGuard Security</title>
+  <meta name="description" content="That VaultGuard page does not exist. Head back to the dashboard, our services, or talk to the monitoring desk." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <script src="../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-navbar></div>
+
+  <main id="main">
+    <section class="error-hero" aria-label="Page not found">
+      <div class="vg-container vg-center">
+        <span class="error-code" aria-hidden="true">404</span>
+        <h1 class="section-heading">Nothing is watching that address</h1>
+        <p class="lead vg-sub">The page you asked for is not here. Nothing is offline, nothing needs fixing on your side.</p>
+        <div class="btn-row btn-row-center vg-mt-3">
+          <a href="../../index.html" class="btn-primary">Back to home <span aria-hidden="true">&rarr;</span></a>
+          <a href="services.html" class="btn-ghost">Browse services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-flush-top" aria-label="Still monitored">
+      <div class="vg-container vg-center" data-reveal="up">
+        <span class="vg-eyebrow"><span data-icon="shieldCheck" data-icon-class="w-4 h-4"></span>Your monitoring is unaffected</span>
+        <h2 class="section-heading vg-mt-2">A broken link is not a broken alarm</h2>
+        <p class="lead vg-sub vg-mt-2">If you reached this page from an email or a dashboard alert, your system is fine. Operators do not depend on the website, and neither does your panel. Call the desk if the alert itself is in doubt.</p>
+      </div>
+    </section>
+    <section class="vg-section" aria-label="Popular destinations">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Or try one of these</span>
+          <h2 class="section-heading">Where people usually meant to go</h2>
+        </div>
+        <div class="grid-4 vg-mt-4" data-reveal="up">
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="shield"></span><h3>Live dashboard</h3><p>Cameras, sensors and the event timeline in one place.</p><a class="text-link" href="../auth/user/user-dashboard.html">Open dashboard <span data-icon="arrowRight" data-icon-class="w-4 h-4"></span></a></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="camera"></span><h3>Services</h3><p>What we monitor and exactly how the response works.</p><a class="text-link" href="services.html">See services <span data-icon="arrowRight" data-icon-class="w-4 h-4"></span></a></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="dollar"></span><h3>Pricing</h3><p>Flat plans, cameras included, no contracts on monthly.</p><a class="text-link" href="pricing.html">Compare plans <span data-icon="arrowRight" data-icon-class="w-4 h-4"></span></a></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="headset"></span><h3>Monitoring desk</h3><p>Answered in English and Spanish, 24 hours a day.</p><a class="text-link" href="contact.html">Contact us <span data-icon="arrowRight" data-icon-class="w-4 h-4"></span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section" aria-label="Common mistakes">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Usually this</span>
+          <h2 class="section-heading">Four mistakes we see most</h2>
+        </div>
+        <div class="grid-4 vg-mt-4" data-reveal="up">
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="chevRight"></span><h3>Wrong depth</h3><p>One level deeper than you think. The property pages live under <code>public/pages/</code> and accounts under <code>public/auth/</code>.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="chevRight"></span><h3>Wrong case</h3><p>File names are capitalised, including <code>FAQ.html</code> and <code>Terms-of-service.html</code>. Servers are case sensitive.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="chevRight"></span><h3>Dropped the id</h3><p>Detail pages need their query, for example <code>service-details.html?id=rental-watch</code>.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="chevRight"></span><h3>Outdated bookmark</h3><p>Some old dashboard links were retired. Go through the account menu instead of a saved link.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="vg-section vg-section-alt vg-flush-bottom" aria-label="Search and support">
+      <div class="vg-container split">
+        <div class="form-card vg-card" data-reveal="left">
+          <div class="form-head">
+            <h2>Looking for something specific?</h2>
+            <p>Tell us what you were trying to reach and we will send the right link.</p>
+          </div>
+          <form data-form="lost-link" novalidate>
+            <div class="field">
+              <label class="label" for="lostUrl">The address you wanted</label>
+              <input class="input" type="text" id="lostUrl" name="url" placeholder="vaultguard.com/public/pages/..." data-label="Address" minlength="6" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="lostEmail">Where to send it</label>
+              <input class="input" type="email" id="lostEmail" name="email" placeholder="you@domain.com" data-label="Email" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="btn-row">
+              <button class="btn-primary" type="submit">Send me the link <span aria-hidden="true">&rarr;</span></button>
+            </div>
+            <p class="form-msg" data-form-msg role="status"></p>
+            <div data-form-success>
+              <strong>Sent</strong>
+              If that address exists on our site, the correct link is in your inbox now.
+            </div>
+          </form>
+        </div>
+        <div class="form-side" data-reveal="right">
+          <div class="side-card vg-card side-cta">
+            <span class="feat-ico" data-icon="bell" style="margin-inline:auto"></span>
+            <h4>Alert not arriving?</h4>
+            <p>A monitoring page that will not load is never just cosmetic. Call the desk so we can check the signal path.</p>
+            <a href="tel:+18005550199" class="btn-primary btn-compact">Call +1 (800) 555-0199</a>
+          </div>
+          <div class="note"><span data-icon="clock" data-icon-class="w-4 h-4"></span><span><strong>Desk hours:</strong> staffed 24 hours a day, every day including holidays.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+
+  <script src="../../src/js/icons.js"></script>
+  <script src="../../src/js/site-data.js"></script>
+  <script src="../../src/js/data/services.js"></script>
+  <script src="../../src/js/data/plans.js"></script>
+  <script src="../../src/js/data/posts.js"></script>
+  <script src="../../src/js/data/faqs.js"></script>
+  <script src="../../src/js/core.js"></script>
+  <script src="../../src/js/theme.js"></script>
+  <script src="../../src/js/rtl.js"></script>
+  <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/navbar.js"></script>
+  <script src="../../src/js/footer.js"></script>
+  <script src="../../src/js/main.js"></script>
+</body>
+</html>

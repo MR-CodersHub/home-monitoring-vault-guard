@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article | VaultGuard Journal</title>
+  <meta name="description" content="Practical home security guidance from the VaultGuard monitoring desk." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <script src="../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-navbar></div>
+
+  <main id="main" data-post-detail>
+    <nav class="crumbs vg-container" data-breadcrumb aria-label="Breadcrumb" style="padding-top:132px"></nav>
+    <div data-post-head></div>
+
+    <section class="vg-section vg-flush-top" aria-label="Article">
+      <div class="vg-container grid-sidebar">
+        <article class="prose" data-post-body></article>
+        <aside class="side-sticky" data-post-side aria-label="Article navigation"></aside>
+      </div>
+    </section>
+
+<section class="vg-section vg-section-alt" aria-label="Author and related">
+      <div class="vg-container" data-post-foot></div>
+    </section>
+
+    <section class="vg-section" aria-label="What this article covers">
+      <div class="vg-container">
+        <div class="vg-center" data-reveal="up">
+          <span class="section-label">Before you scroll</span>
+          <h2 class="section-heading">Every article ships with the same parts</h2>
+        </div>
+        <div class="grid-4 vg-mt-4" data-reveal="up">
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="check"></span><h3>Measured, not guessed</h3><p>Where a claim comes from our own desk data, the figure and the month are stated in the text.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="check"></span><h3>Written by an operator</h3><p>Every piece is drafted by someone who has handled the alert type it describes, then edited by our lead.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="check"></span><h3>Reviewed quarterly</h3><p>Anything that depends on a rule, price or integration is re-checked and the date is updated.</p></article>
+          <article class="vg-card feat-card"><span class="feat-ico" data-icon="check"></span><h3>Corrections published</h3><p>If we get it wrong, the fix and the original wording both stay on the record.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="vg-section" aria-label="Discussion">
+      <div class="vg-container split">
+        <div data-reveal="left">
+          <span class="section-label">Tell us</span>
+          <h2 class="section-heading">Did this match what you are seeing?</h2>
+          <p class="section-sub">Most field questions arrive by email and are answered on the public desk thread, so the next person with the same problem finds it.</p>
+          <div class="btn-row vg-mt-3">
+            <a href="contact.html" class="btn-primary">Ask the desk</a>
+            <a href="blog.html" class="btn-ghost">Back to all articles</a>
+          </div>
+        </div>
+        <div data-reveal="right">
+          <form class="vg-card form-card" data-form="support" novalidate>
+            <div class="form-head">
+              <h3>Reply to the author</h3>
+              <p>One field is enough. We read every one.</p>
+            </div>
+            <div class="field">
+              <label class="label" for="cmName">Name</label>
+              <input class="input" type="text" id="cmName" name="name" placeholder="Alex Morgan" data-label="Name" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="cmEmail">Email</label>
+              <input class="input" type="email" id="cmEmail" name="email" placeholder="you@domain.com" data-label="Email" required />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="cmMsg">What did you want to know?</label>
+              <textarea class="textarea" id="cmMsg" name="message" placeholder="Four cameras and a cat that triggers the driveway every afternoon" data-label="Message" minlength="15" required></textarea>
+              <p class="field-error"></p>
+            </div>
+            <div class="btn-row">
+              <button class="btn-primary" type="submit">Send to the author <span aria-hidden="true">&rarr;</span></button>
+            </div>
+            <p class="form-msg" data-form-msg role="status"></p>
+            <div data-form-success>
+              <strong>Reply logged</strong>
+              A reference is on its way to your inbox. Expect an answer within one business hour.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="vg-section vg-section-alt vg-flush-bottom" aria-label="Keep reading">
+      <div class="vg-container vg-center">
+        <span class="vg-eyebrow"><span data-icon="send" data-icon-class="w-4 h-4"></span>First Tuesday of the month</span>
+        <h2 class="section-heading vg-mt-2">One briefing, no sales</h2>
+        <p class="lead vg-mt-2">Monitoring changes, new detection rules, and the two or three articles worth your time. Nothing else.</p>
+        <form class="newsletter-inline vg-mt-3" data-form="newsletter" novalidate>
+          <input class="input" type="email" name="email" placeholder="you@domain.com" aria-label="Email for the briefing" data-label="Email" required />
+          <button class="btn-primary" type="submit">Subscribe</button>
+          <p class="form-msg" data-form-msg role="status"></p>
+        </form>
+        <div class="btn-row btn-row-center vg-mt-3">
+          <a href="blog.html" class="btn-ghost">More articles</a>
+          <a href="pricing.html" class="btn-ghost">See pricing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+
+  <script src="../../src/js/icons.js"></script>
+  <script src="../../src/js/site-data.js"></script>
+  <script src="../../src/js/data/services.js"></script>
+  <script src="../../src/js/data/plans.js"></script>
+  <script src="../../src/js/data/posts.js"></script>
+  <script src="../../src/js/data/faqs.js"></script>
+  <script src="../../src/js/core.js"></script>
+  <script src="../../src/js/theme.js"></script>
+  <script src="../../src/js/rtl.js"></script>
+  <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/blog-details.js"></script>
+  <script src="../../src/js/navbar.js"></script>
+  <script src="../../src/js/footer.js"></script>
+  <script src="../../src/js/main.js"></script>
+</body>
+</html>

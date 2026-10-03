@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In | VaultGuard Security</title>
+  <meta name="description" content="Sign in to your VaultGuard dashboard to see live cameras, sensor states and the event timeline." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <script src="../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" class="auth-wrap">
+    <aside class="auth-aside">
+      <a class="nav-logo" href="../../index.html">
+        <span class="logo-icon" aria-hidden="true"><img src="../../assets/img/logo.svg" alt="" width="32" height="32" /></span>
+        <span class="logo-text">Vault<span>Guard</span></span>
+      </a>
+      <div class="aside-copy">
+        <h2>Welcome back to the desk</h2>
+        <p>Sign in to see live cameras, sensor states and every event your monitoring desk handled while you were away.</p>
+        <div class="icon-strip">
+          <div class="icon-strip-item"><span data-icon="camera" data-icon-class="w-5 h-5"></span><span><strong>12,843</strong> properties live</span></div>
+          <div class="icon-strip-item"><span data-icon="zap" data-icon-class="w-5 h-5"></span><span><strong>27 sec</strong> median response</span></div>
+          <div class="icon-strip-item"><span data-icon="shieldCheck" data-icon-class="w-5 h-5"></span><span><strong>0.3%</strong> false alarm rate</span></div>
+        </div>
+        <div class="auth-quote"><strong>&ldquo;The operator told me a package was taken from my porch at 14:32 and had already spoken to my neighbour.&rdquo;</strong><br />Smart Rentals host, Austin</div>
+      </div>
+      <div class="auth-aside-foot">Operator floor staffed 24 hours a day, every day.</div>
+    </aside>
+
+    <section class="auth-main">
+      <div class="auth-panel">
+        <div class="form-head">
+          <h1>Sign in</h1>
+          <p>Use the email on your account. This demo does not send a real session, it just shows the flow.</p>
+        </div>
+
+        <form data-form="login" data-dash="public/auth/user/user-dashboard.html" novalidate>
+          <div class="field">
+            <label class="label" for="liEmail">Email</label>
+            <input class="input" type="email" id="liEmail" name="email" placeholder="you@domain.com" data-label="Email" autocomplete="email" required />
+            <p class="field-error"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="liPassword">Password</label>
+            <input class="input" type="password" id="liPassword" name="password" placeholder="Your password" data-label="Password" autocomplete="current-password" required />
+            <p class="field-error"></p>
+          </div>
+          <div class="auth-row">
+            <label class="checkbox"><input type="checkbox" name="remember" /><span>Keep me signed in on this device</span></label>
+            <a href="#" class="text-link" style="margin-top:0">Forgot password?</a>
+          </div>
+          <div class="btn-row">
+            <button class="btn-primary" type="submit">Sign in <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <p class="form-msg" data-form-msg role="status"></p>
+          <div data-form-success>
+            <strong>Signed in</strong>
+            Opening your dashboard now. If nothing happens, <a data-dash-link href="user/user-dashboard.html">open the dashboard manually</a>.
+          </div>
+        </form>
+
+        <div class="auth-divider">or jump straight in</div>
+        <div class="auth-quick">
+          <a href="user/user-dashboard.html"><span data-icon="user" data-icon-class="w-4 h-4"></span><span><strong>Resident dashboard</strong> &middot; cameras, devices, invoices</span></a>
+          <a href="admin/admin-dashboard.html"><span data-icon="shield" data-icon-class="w-4 h-4"></span><span><strong>Admin console</strong> &middot; properties, agents, revenue</span></a>
+        </div>
+
+        <p class="auth-alt">No account yet? <a href="signup.html">Start a 30-day free trial</a></p>
+        <p class="auth-alt"><a href="../../index.html">Back to vaultguard.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../src/js/icons.js"></script>
+  <script src="../../src/js/site-data.js"></script>
+  <script src="../../src/js/data/services.js"></script>
+  <script src="../../src/js/data/plans.js"></script>
+  <script src="../../src/js/data/posts.js"></script>
+  <script src="../../src/js/data/faqs.js"></script>
+  <script src="../../src/js/core.js"></script>
+  <script src="../../src/js/theme.js"></script>
+  <script src="../../src/js/rtl.js"></script>
+  <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/main.js"></script>
+</body>
+</html>

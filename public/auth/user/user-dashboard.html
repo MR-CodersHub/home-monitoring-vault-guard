@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard | VaultGuard Security</title>
+  <meta name="description" content="Your VaultGuard dashboard: live devices, event timeline, plan usage, invoices and notification preferences." />
+  <meta name="theme-color" content="#120D2B" />
+  <link rel="icon" href="../../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../src/css/style.css" />
+  <script src="../../../src/js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../../src/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="dash-layout">
+    <div data-dash-side></div>
+
+    <main id="main" class="dash-main">
+      <header class="dash-head">
+        <div>
+          <h1>Harbour Court, unit 4B</h1>
+          <p class="dash-sub">Alex Morgan &middot; Smart plan &middot; monitored since March 2025. Demo account, no live devices attached.</p>
+        </div>
+        <div class="dash-head-actions">
+          <span class="dash-clock" data-dash-clock>--:--:-- CT</span>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme"></button>
+          <button class="icon-btn" type="button" data-dir-toggle aria-label="Toggle text direction"></button>
+          <a class="btn-ghost btn-compact" href="../login.html">Sign out</a>
+        </div>
+      </header>
+
+      <section id="overview" class="dash-section" aria-label="Overview">
+        <div class="dash-section-head">
+          <h2><span data-icon="grid" data-icon-class="w-5 h-5"></span>Overview</h2>
+          <span class="result-count">Last synced a moment ago</span>
+        </div>
+        <div data-kpi></div>
+        <div class="dash-panels vg-mt-3">
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Recent activity</h3>
+              <span class="result-count">Verified by the desk</span>
+            </div>
+            <ul class="feed" data-event-list></ul>
+          </article>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>What the desk sees</h3>
+            </div>
+            <div class="map-panel">
+              <div class="map-grid-overlay" aria-hidden="true"></div>
+              <div class="map-pin" aria-hidden="true"><span data-icon="mapPin" data-icon-class="w-7 h-7"></span></div>
+              <div class="map-card">
+                <strong>Verified: you are covered</strong>
+                <p>Zone 1 and Zone 2 armed in Away mode. Six devices reporting, five online.</p>
+              </div>
+            </div>
+            <p class="form-note"><span data-icon="info" data-icon-class="w-4 h-4"></span><span>Live view is never stored. Only verified clips are kept, for 48 hours on your plan.</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="plan" class="dash-section" aria-label="My plan">
+        <div class="dash-section-head">
+          <h2><span data-icon="briefcase" data-icon-class="w-5 h-5"></span>My plan</h2>
+          <a class="btn-ghost btn-compact" href="../../pages/pricing.html">Compare plans</a>
+        </div>
+        <div class="dash-panels">
+          <div data-plan-card></div>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Billing history</h3>
+            </div>
+            <div data-invoice-table></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="devices" class="dash-section" aria-label="Devices">
+        <div class="dash-section-head">
+          <h2><span data-icon="camera" data-icon-class="w-5 h-5"></span>Devices</h2>
+          <span class="result-count">6 attached, 1 needs attention</span>
+        </div>
+        <div class="device-grid" data-device-grid></div>
+      </section>
+
+      <section id="activity" class="dash-section" aria-label="Activity">
+        <div class="dash-section-head">
+          <h2><span data-icon="activity" data-icon-class="w-5 h-5"></span>Activity</h2>
+          <span class="result-count">Every entry tagged with the booking</span>
+        </div>
+        <article class="dash-card vg-card">
+          <div class="dash-toolbar">
+            <span class="search-inline">
+              <span data-icon="search" data-icon-class="w-4 h-4"></span>
+              <input class="input" type="search" placeholder="Search events" aria-label="Search events" data-table-search />
+            </span>
+            <span class="field-select">
+              <select class="select" data-table-filter="state" aria-label="Filter by state">
+                <option value="">All states</option>
+                <option value="Reviewed">Reviewed</option>
+                <option value="Auto">Auto</option>
+                <option value="Permitted">Permitted</option>
+                <option value="Action needed">Action needed</option>
+              </select>
+              <span data-icon="chevDown" data-icon-class="w-4 h-4"></span>
+            </span>
+            <span class="result-count" data-table-count>0 of 0 rows</span>
+          </div>
+          <div class="table-scroll">
+            <table class="vtable dash-table" data-filter-table>
+              <thead><tr><th scope="col">Event</th><th scope="col">When</th><th scope="col">State</th></tr></thead>
+              <tbody>
+                <tr data-filter-table data-state="Reviewed"><th scope="row">Motion detected, Driveway</th><td>Today 18:42</td><td><span class="tag tag-mint">Reviewed</span></td></tr>
+                <tr data-filter-table data-state="Auto"><th scope="row">Guest verification passed, M. Alvarez</th><td>Today 17:05</td><td><span class="tag">Auto</span></td></tr>
+                <tr data-filter-table data-state="Permitted"><th scope="row">Front Entry unlocked by fingerprint: Sam</th><td>Today 16:58</td><td><span class="tag tag-mint">Permitted</span></td></tr>
+                <tr data-filter-table data-state="Action needed"><th scope="row">Low battery: Garage Side Door sensor</th><td>Yesterday 21:12</td><td><span class="tag tag-plain">Action needed</span></td></tr>
+                <tr data-filter-table data-state="Auto"><th scope="row">System armed, Away mode</th><td>Yesterday 19:40</td><td><span class="tag">Auto</span></td></tr>
+                <tr data-filter-table data-state="Reviewed"><th scope="row">Motion detected, Backyard</th><td>Yesterday 15:22</td><td><span class="tag tag-mint">Reviewed</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section id="billing" class="dash-section" aria-label="Billing">
+        <div class="dash-section-head">
+          <h2><span data-icon="card" data-icon-class="w-5 h-5"></span>Billing</h2>
+          <span class="result-count">Next invoice 12 Oct 2026</span>
+        </div>
+        <div class="dash-panels">
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Payment method</h3>
+            </div>
+            <ul class="usage">
+              <li class="usage-row"><span>Card</span><strong>Visa ending 4471</strong></li>
+              <li class="usage-row"><span>Expires</span><strong>09 / 2029</strong></li>
+              <li class="usage-row"><span>Next charge</span><strong>$39.00 on 12 Oct 2026</strong></li>
+              <li class="usage-row"><span>Payment processor</span><strong>Stored by our processor</strong></li>
+            </ul>
+            <div class="btn-row">
+              <button class="btn-ghost btn-compact" type="button" data-toast="Card details are held by the payment processor, not VaultGuard.">How storage works</button>
+              <a class="btn-ghost btn-compact" href="../../pages/contact.html">Billing support</a>
+            </div>
+          </article>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Spend this year</h3>
+            </div>
+            <ul class="usage">
+              <li class="usage-row"><span>Monitoring</span><strong>$351.00</strong></li>
+              <li class="usage-row"><span>Equipment</span><strong>$89.00</strong></li>
+              <li class="usage-row"><span>Installation</span><strong>$0.00</strong></li>
+              <li class="usage-row"><span>Dispatch fees</span><strong>$0.00</strong></li>
+              <li class="usage-row"><span>Total to date</span><strong>$440.00</strong></li>
+            </ul>
+            <p class="form-note"><span data-icon="info" data-icon-class="w-4 h-4"></span><span>Per the terms of service, dispatch is never billed, so that line stays at zero.</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="settings" class="dash-section" aria-label="Settings">
+        <div class="dash-section-head">
+          <h2><span data-icon="sliders" data-icon-class="w-5 h-5"></span>Settings</h2>
+          <span class="result-count">Changes reach the desk immediately</span>
+        </div>
+        <div class="dash-panels">
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Notifications</h3>
+            </div>
+            <ul class="pref-list" data-prefs>
+              <li class="pref-row">
+                <span><strong>Verified alert push</strong><small>Every confirmed event, including ones we cancel as false</small></span>
+                <label class="switch" data-switch data-switch-label="Alert push"><input type="checkbox" checked aria-label="Verified alert push" /><span class="track"></span></label>
+              </li>
+              <li class="pref-row">
+                <span><strong>Guest arrival</strong><small>When a pass opens the door</small></span>
+                <label class="switch" data-switch data-switch-label="Guest arrival"><input type="checkbox" checked aria-label="Guest arrival" /><span class="track"></span></label>
+              </li>
+              <li class="pref-row">
+                <span><strong>Low battery reminders</strong><small>One warning at 20%, one at 5%</small></span>
+                <label class="switch" data-switch data-switch-label="Battery reminders"><input type="checkbox" checked aria-label="Low battery reminders" /><span class="track"></span></label>
+              </li>
+              <li class="pref-row">
+                <span><strong>Monthly briefing</strong><small>Security news and your own usage summary</small></span>
+                <label class="switch" data-switch data-switch-label="Monthly briefing"><input type="checkbox" aria-label="Monthly briefing" /><span class="track"></span></label>
+              </li>
+            </ul>
+          </article>
+          <article class="dash-card vg-card">
+            <div class="panel-head">
+              <h3>Profile</h3>
+            </div>
+            <form data-form="profile" novalidate>
+              <div class="field">
+                <label class="label" for="pfName">Full name</label>
+                <input class="input" type="text" id="pfName" name="name" value="Alex Morgan" data-label="Name" required />
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label class="label" for="pfEmail">Email</label>
+                <input class="input" type="email" id="pfEmail" name="email" value="alex@example.com" data-label="Email" required />
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label class="label" for="pfPhone">Phone for alerts</label>
+                <input class="input" type="tel" id="pfPhone" name="phone" value="+1 512 555 0142" data-label="Phone" />
+                <p class="field-error"></p>
+              </div>
+              <div class="btn-row">
+                <button class="btn-primary btn-compact" type="submit">Save changes</button>
+              </div>
+              <p class="form-msg" data-form-msg role="status"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../../../src/js/icons.js"></script>
+  <script src="../../../src/js/site-data.js"></script>
+  <script src="../../../src/js/data/services.js"></script>
+  <script src="../../../src/js/data/plans.js"></script>
+  <script src="../../../src/js/data/posts.js"></script>
+  <script src="../../../src/js/data/faqs.js"></script>
+  <script src="../../../src/js/core.js"></script>
+  <script src="../../../src/js/theme.js"></script>
+  <script src="../../../src/js/rtl.js"></script>
+  <script src="../../../src/js/form-validation.js"></script>
+  <script src="../../../src/js/dashboard.js"></script>
+  <script src="../../../src/js/user-dashboard.js"></script>
+  <script src="../../../src/js/main.js"></script>
+</body>
+</html>
