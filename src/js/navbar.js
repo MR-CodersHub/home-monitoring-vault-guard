@@ -1,12 +1,9 @@
-﻿(function () {
+(function () {
   "use strict";
 
   function logo(size) {
-    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none" aria-hidden="true">' +
-      '<path d="M16 2L4 7V15C4 21.6 9.2 27.8 16 30C22.8 27.8 28 21.6 28 15V7L16 2Z" fill="url(#vgLogoGrad)"/>' +
-      '<path d="M12 16L15 19L21 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<defs><linearGradient id="vgLogoGrad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">' +
-      '<stop stop-color="#A855F7"/><stop offset="1" stop-color="#6D28D9"/></linearGradient></defs></svg>';
+    var s = size || 34;
+    return '<img class="nav-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="' + s + '" height="' + s + '" style="display:block;width:' + s + 'px;height:' + s + 'px;object-fit:contain;" />';
   }
 
   function navLinks() {
@@ -31,17 +28,16 @@
     return '<nav class="navbar" id="navbar" aria-label="Main">' +
       '<div class="nav-container">' +
         '<a href="' + VG.url("index.html") + '" class="nav-logo" aria-label="' + VG.esc(s.name) + ' home">' +
-          '<span class="logo-icon" aria-hidden="true">' + logo(32) + "</span>" +
+          '<span class="logo-icon" aria-hidden="true">'+logo(32)+ "</span>" +
           '<span class="logo-text">' + VG.esc(s.name) + "</span>" +
         "</a>" +
         '<ul class="nav-links" id="navLinks" role="list">' + navLinks() + "</ul>" +
         '<div class="nav-actions">' +
-          '<a href="' + s.phoneHref + '" class="nav-phone">' + VG.icon("phone", "w-[14px] h-[14px]") + VG.esc(s.phone) + "</a>" +
           '<button type="button" class="icon-btn" data-theme-toggle></button>' +
           '<button type="button" class="icon-btn" data-dir-toggle></button>' +
           '<div class="profile-menu">' +
             '<button type="button" class="profile-btn" id="profileBtn" aria-haspopup="true" aria-expanded="false" aria-controls="profileDropdown">' +
-              VG.icon("user", "w-[18px] h-[18px]") + '<span class="profile-label">Account</span>' + VG.icon("chevDown", "w-3.5 h-3.5 caret") +
+              VG.icon("user", "w-[18px] h-[18px]") +
             "</button>" +
             '<div class="profile-dropdown" id="profileDropdown" role="menu" aria-labelledby="profileBtn">' +
               '<div class="pd-head"><span class="pd-avatar">' + VG.icon("shield", "w-5 h-5") + "</span>" +
@@ -55,7 +51,6 @@
               dropdownItem("headset", "Talk to support", "public/pages/contact.html", "Desk open 24/7") +
             "</div>" +
           "</div>" +
-          '<a href="' + VG.url(a.signup) + '" class="btn-login nav-cta">Get Protected</a>' +
           '<button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">' +
             "<span></span><span></span><span></span></button>" +
         "</div>" +
@@ -78,6 +73,7 @@
     var hamburger = VG.q("#hamburger");
     var navLinksEl = VG.q("#navLinks");
     var overlay = VG.q("#mobileOverlay");
+    var profileMenu = VG.q(".profile-menu");
     var profileBtn = VG.q("#profileBtn");
     var dropdown = VG.q("#profileDropdown");
 
@@ -105,19 +101,25 @@
     });
 
     function setDrop(open) {
-      dropdown.classList.toggle("open", open);
-      profileBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (profileMenu) profileMenu.classList.toggle("open", open);
+      if (dropdown) dropdown.classList.toggle("open", open);
+      if (profileBtn) profileBtn.setAttribute("aria-expanded", open ? "true" : "false");
     }
-    profileBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      setDrop(!dropdown.classList.contains("open"));
-    });
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".profile-menu")) setDrop(false);
-    });
-    dropdown.addEventListener("click", function (e) {
-      if (e.target.closest(".pd-item")) setDrop(false);
-    });
+
+    if (profileBtn && dropdown) {
+      profileBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = profileMenu ? profileMenu.classList.contains("open") : dropdown.classList.contains("open");
+        setDrop(!isOpen);
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".profile-menu")) setDrop(false);
+      });
+      dropdown.addEventListener("click", function (e) {
+        if (e.target.closest(".pd-item")) setDrop(false);
+      });
+    }
 
     document.addEventListener("keydown", function (e) {
       if (e.key !== "Escape") return;

@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign In | VaultGuard Security</title>
-  <meta name="description" content="Sign in to your VaultGuard dashboard to see live cameras, sensor states and the event timeline." />
+  <meta name="description" content="Sign in to your VaultGuard security console to monitor cameras, device states, and real-time emergency dispatch events." />
   <meta name="theme-color" content="#120D2B" />
-  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../assets/logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -19,64 +19,116 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <main id="main" class="auth-wrap">
+    <!-- Left Operations Showcase Aside -->
     <aside class="auth-aside">
-      <a class="nav-logo" href="../../index.html">
-        <span class="logo-icon" aria-hidden="true"><img src="../../assets/img/logo.svg" alt="" width="32" height="32" /></span>
-        <span class="logo-text">Vault<span>Guard</span></span>
-      </a>
-      <div class="aside-copy">
-        <h2>Welcome back to the desk</h2>
-        <p>Sign in to see live cameras, sensor states and every event your monitoring desk handled while you were away.</p>
-        <div class="icon-strip">
-          <div class="icon-strip-item"><span data-icon="camera" data-icon-class="w-5 h-5"></span><span><strong>12,843</strong> properties live</span></div>
-          <div class="icon-strip-item"><span data-icon="zap" data-icon-class="w-5 h-5"></span><span><strong>27 sec</strong> median response</span></div>
-          <div class="icon-strip-item"><span data-icon="shieldCheck" data-icon-class="w-5 h-5"></span><span><strong>0.3%</strong> false alarm rate</span></div>
+      <div class="auth-brand-row">
+        <a class="nav-logo" href="../../index.html">
+          <span class="logo-icon" aria-hidden="true">
+            <img src="../../assets/logo.png" alt="VaultGuard logo" width="34" height="34" style="display:block;width:34px;height:34px;object-fit:contain;" />
+          </span>
+          <span class="logo-text" style="color: white ;">Vault<span>Guard</span></span>
+        </a>
+        <div class="auth-badge-live">
+          <span class="live-beacon"></span>
+          <span>24/7 Operations Live</span>
         </div>
-        <div class="auth-quote"><strong>&ldquo;The operator told me a package was taken from my porch at 14:32 and had already spoken to my neighbour.&rdquo;</strong><br />Smart Rentals host, Austin</div>
       </div>
-      <div class="auth-aside-foot">Operator floor staffed 24 hours a day, every day.</div>
+
+      <div class="aside-copy">
+        <h2>Next-generation <em>residential security</em> and live monitoring.</h2>
+        <p>Access high-definition low-latency video, remote perimeter arming, and dedicated operator response logs from your command console.</p>
+
+        <div class="auth-stat-strip">
+          <div class="auth-stat-box">
+            <div class="auth-stat-num">12.8k<span>+</span></div>
+            <div class="auth-stat-lbl">Homes Protected</div>
+          </div>
+          <div class="auth-stat-box">
+            <div class="auth-stat-num">27<span>s</span></div>
+            <div class="auth-stat-lbl">Median Response</div>
+          </div>
+          <div class="auth-stat-box">
+            <div class="auth-stat-num">0.3<span>%</span></div>
+            <div class="auth-stat-lbl">False Dispatches</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-aside-foot">
+        <span><span data-icon="lock" data-icon-class="w-3.5 h-3.5"></span> SOC 2 Type II</span>
+        <span><span data-icon="shield" data-icon-class="w-3.5 h-3.5"></span> UL Listed Station</span>
+        <span><span data-icon="zap" data-icon-class="w-3.5 h-3.5"></span> 99.99% Uptime</span>
+      </div>
     </aside>
 
+    <!-- Right Interactive Form Area -->
     <section class="auth-main">
-      <div class="auth-panel">
+
+      <div class="auth-card-glass">
         <div class="form-head">
           <h1>Sign in</h1>
-          <p>Use the email on your account. This demo does not send a real session, it just shows the flow.</p>
+          <p>Enter your account credentials to access your security portal.</p>
         </div>
 
         <form data-form="login" data-dash="public/auth/user/user-dashboard.html" novalidate>
           <div class="field">
-            <label class="label" for="liEmail">Email</label>
-            <input class="input" type="email" id="liEmail" name="email" placeholder="you@domain.com" data-label="Email" autocomplete="email" required />
+            <label class="label" for="liEmail">Email Address</label>
+            <div class="input-with-icon no-toggle">
+              <span class="input-icon-left" data-icon="mail" data-icon-class="w-4 h-4"></span>
+              <input class="input" type="email" id="liEmail" name="email" placeholder="name@domain.com" data-label="Email" autocomplete="email" required />
+            </div>
             <p class="field-error"></p>
           </div>
+
           <div class="field">
-            <label class="label" for="liPassword">Password</label>
-            <input class="input" type="password" id="liPassword" name="password" placeholder="Your password" data-label="Password" autocomplete="current-password" required />
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <label class="label" for="liPassword">Password</label>
+              <a href="#" class="text-link" style="font-size:0.8rem; margin:0;" data-toast="Password reset instructions will be sent to your email." data-toast-type="info">Forgot password?</a>
+            </div>
+            <div class="input-with-icon">
+              <span class="input-icon-left" data-icon="lock" data-icon-class="w-4 h-4"></span>
+              <input class="input" type="password" id="liPassword" name="password" placeholder="Enter your password" data-label="Password" autocomplete="current-password" required />
+              <button type="button" class="btn-pw-toggle" data-pw-target="liPassword" aria-label="Show password">
+                <span data-icon="eye" data-icon-class="w-4 h-4"></span>
+              </button>
+            </div>
             <p class="field-error"></p>
           </div>
-          <div class="auth-row">
-            <label class="checkbox"><input type="checkbox" name="remember" /><span>Keep me signed in on this device</span></label>
-            <a href="#" class="text-link" style="margin-top:0">Forgot password?</a>
+
+          <div class="btn-row" style="margin-top: 4px;">
+            <button class="btn-primary" type="submit" style="width:100%; justify-content:center; padding-block:14px; font-size:0.95rem;">
+              <span>Sign In</span> <span aria-hidden="true">&rarr;</span>
+            </button>
           </div>
-          <div class="btn-row">
-            <button class="btn-primary" type="submit">Sign in <span aria-hidden="true">&rarr;</span></button>
-          </div>
+
           <p class="form-msg" data-form-msg role="status"></p>
           <div data-form-success>
-            <strong>Signed in</strong>
-            Opening your dashboard now. If nothing happens, <a data-dash-link href="user/user-dashboard.html">open the dashboard manually</a>.
+            <strong>Authentication Confirmed</strong>
+            Opening your dashboard now. If redirect doesn't trigger, <a data-dash-link href="user/user-dashboard.html">open dashboard manually</a>.
           </div>
         </form>
 
-        <div class="auth-divider">or jump straight in</div>
-        <div class="auth-quick">
-          <a href="user/user-dashboard.html"><span data-icon="user" data-icon-class="w-4 h-4"></span><span><strong>Resident dashboard</strong> &middot; cameras, devices, invoices</span></a>
-          <a href="admin/admin-dashboard.html"><span data-icon="shield" data-icon-class="w-4 h-4"></span><span><strong>Admin console</strong> &middot; properties, agents, revenue</span></a>
+        <div class="auth-divider">or authenticate with SSO</div>
+
+        <div class="auth-social-row">
+          <button type="button" class="auth-social-btn" data-provider="Google">
+            <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+              <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.3 9 5 12 5z"/>
+              <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/>
+              <path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.8s.2-2.1.4-2.8L1.9 6.3C.7 8.7 0 10.8 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/>
+              <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.3-6.4-5.2L1.9 16c1.8 3.7 5.6 7 10.1 7z"/>
+            </svg>
+            <span>Google</span>
+          </button>
+          <button type="button" class="auth-social-btn" data-provider="Apple">
+            <svg class="w-4 h-4 flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.65-.79 1.09-1.89.97-2.99-1 .04-2.18.66-2.88 1.45-.61.69-1.15 1.8-1 2.89 1.12.09 2.26-.56 2.91-1.35z"/>
+            </svg>
+            <span>Apple</span>
+          </button>
         </div>
 
-        <p class="auth-alt">No account yet? <a href="signup.html">Start a 30-day free trial</a></p>
-        <p class="auth-alt"><a href="../../index.html">Back to vaultguard.com</a></p>
+        <p class="auth-alt">Don't have an account? <a href="signup.html">Create a new account</a></p>
       </div>
     </section>
   </main>
@@ -91,6 +143,7 @@
   <script src="../../src/js/theme.js"></script>
   <script src="../../src/js/rtl.js"></script>
   <script src="../../src/js/form-validation.js"></script>
+  <script src="../../src/js/auth-helper.js"></script>
   <script src="../../src/js/main.js"></script>
 </body>
 </html>

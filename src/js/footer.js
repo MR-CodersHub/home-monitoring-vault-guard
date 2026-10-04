@@ -1,12 +1,9 @@
-﻿(function () {
+(function () {
   "use strict";
 
   function logo(size) {
-    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none" aria-hidden="true">' +
-      '<path d="M16 2L4 7V15C4 21.6 9.2 27.8 16 30C22.8 27.8 28 21.6 28 15V7L16 2Z" fill="url(#vgFootGrad)"/>' +
-      '<path d="M12 16L15 19L21 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<defs><linearGradient id="vgFootGrad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">' +
-      '<stop stop-color="#A855F7"/><stop offset="1" stop-color="#6D28D9"/></linearGradient></defs></svg>';
+    var s = size || 30;
+    return '<img class="footer-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="' + s + '" height="' + s + '" style="display:block;width:' + s + 'px;height:' + s + 'px;object-fit:contain;" />';
   }
 
   function socials() {

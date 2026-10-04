@@ -107,6 +107,7 @@ ul { list-style: none; }
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--accent);
+  margin-top: 100px;
   margin-bottom: 16px;
 }
 
@@ -1741,7 +1742,7 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px 8px 12px;
+  padding: 10px;
   border-radius: var(--radius-full);
   background: rgba(168, 85, 247, 0.12);
   border: 1px solid var(--glass-border);
@@ -1760,6 +1761,7 @@ html {
 .profile-dropdown {
   position: absolute;
   top: calc(100% + 12px);
+  right: 0;
   inset-inline-end: 0;
   width: 268px;
   padding: 10px;
@@ -1771,12 +1773,24 @@ html {
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transform: translateY(-8px);
   transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), visibility var(--dur-fast);
   z-index: 1100;
 }
 [data-theme="light"] .profile-dropdown { background: rgba(255, 255, 255, 0.98); box-shadow: var(--shadow-soft); }
-.profile-menu.open .profile-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.profile-menu.open .profile-dropdown,
+.profile-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.profile-menu.open .profile-btn,
+.profile-btn[aria-expanded="true"] {
+  border-color: var(--accent);
+  box-shadow: 0 0 22px var(--accent-glow-soft);
+}
 .pd-head {
   display: flex;
   align-items: center;

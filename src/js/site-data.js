@@ -12,11 +12,10 @@
   mapsUrl: "https://maps.google.com/?q=4180+Halcyon+Ridge+Blvd+Austin+TX",
   nav: [
     { label: "Home", path: "index.html" },
-    { label: "Smart Rentals", path: "public/pages/home-2.html" },
+    { label: "Home 2", path: "public/pages/home-2.html" },
+    { label: "About", path: "public/pages/about.html" },
     { label: "Services", path: "public/pages/services.html" },
-    { label: "Pricing", path: "public/pages/pricing.html" },
     { label: "Blog", path: "public/pages/blog.html" },
-    { label: "FAQ", path: "public/pages/FAQ.html" },
     { label: "Contact", path: "public/pages/contact.html" }
   ],
   auth: {
