@@ -14,7 +14,7 @@
 .vg-section-sm { padding: 68px 0; }
 .vg-section-alt { background: linear-gradient(180deg, var(--bg-tertiary) 0%, transparent 100%); }
 .vg-flush-top { padding-top: 0; }
-.vg-flush-bottom { padding-bottom: 0; }
+.vg-flush-bottom { padding-bottom: 30px; }
 .vg-center { text-align: center; }
 .vg-center .vg-sub, .vg-center .lead { margin-inline: auto; }
 .vg-mt-2 { margin-top: 18px; }
@@ -1666,19 +1666,100 @@
   .feed time, .agent .dot-pill { margin-inline-start: auto; }
 }
 
-/* Navbar: logo + two toggles + profile + hamburger overflow below ~400px. */
+/* Navbar: equal around spacing, balanced touch targets, and responsive alignment */
 @media (max-width: 768px) {
-  .nav-logo { flex-shrink: 1; min-width: 0; }
-  .logo-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-container {
+    width: 100%;
+    padding: 0 20px;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .nav-logo { flex-shrink: 0; min-width: 0; }
+  .logo-text { white-space: nowrap; }
+  .nav-actions {
+    gap: 10px;
+    margin-inline-start: auto;
+  }
+  .hamburger {
+    display: inline-flex;
+    z-index: 1000;
+  }
 }
 @media (max-width: 480px) {
-  .nav-container { padding: 0 16px; gap: 12px; }
-  .nav-logo { gap: 8px; }
-  .logo-text { font-size: 1.05rem; }
-  .nav-actions { gap: 6px; }
-  .nav-actions .icon-btn { width: 32px; height: 32px; }
-  .nav-actions .profile-btn { width: 32px; height: 32px; padding: 7px; }
-  .hamburger { padding: 4px 0; }
+  .nav-container {
+    width: 100%;
+    padding: 0 16px;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .nav-logo {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .logo-icon { width: 30px; height: 30px; }
+  .nav-logo-img { width: 30px; height: 30px; }
+  .logo-text { font-size: 1.1rem; }
+  .nav-actions {
+    gap: 8px;
+    margin-inline-start: auto;
+  }
+  .nav-actions .icon-btn,
+  .nav-actions .profile-btn,
+  .nav-actions .hamburger {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+  }
+  .nav-actions .hamburger span {
+    width: 16px;
+  }
+  .nav-links {
+    gap: 10px;
+    padding: 80px 20px 28px;
+  }
+  .nav-links li {
+    max-width: 290px;
+  }
+  .nav-link {
+    font-size: 1.3rem;
+    padding: 12px 22px;
+  }
+}
+@media (max-width: 360px) {
+  .nav-container {
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .nav-logo {
+    gap: 6px;
+  }
+  .logo-icon { width: 26px; height: 26px; }
+  .nav-logo-img { width: 26px; height: 26px; }
+  .logo-text { font-size: 0.95rem; }
+  .nav-actions {
+    gap: 6px;
+  }
+  .nav-actions .icon-btn,
+  .nav-actions .profile-btn,
+  .nav-actions .hamburger {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+  .nav-actions .hamburger span {
+    width: 14px;
+  }
+  .nav-links {
+    gap: 8px;
+    padding: 70px 16px 20px;
+  }
+  .nav-links li {
+    max-width: 260px;
+  }
+  .nav-link {
+    font-size: 1.15rem;
+    padding: 10px 18px;
+  }
 }
 
 /* Hero: the desktop left offset (clamp(25px, 10vw, 500px)) adds to the item

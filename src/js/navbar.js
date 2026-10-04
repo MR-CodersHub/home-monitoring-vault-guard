@@ -3,7 +3,7 @@
 
   function logo(size) {
     var s = size || 34;
-    return '<img class="nav-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="' + s + '" height="' + s + '" style="display:block;width:' + s + 'px;height:' + s + 'px;object-fit:contain;" />';
+    return '<img class="nav-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="' + s + '" height="' + s + '" style="display:block;width:' + s + 'px;height:' + s + 'px;object-fit:contain;flex-shrink:0;" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src=\'' + VG.url("assets/img/logo.svg") + '\';}" />';
   }
 
   function navLinks() {

@@ -6,7 +6,7 @@ VG.dash = (function () {
   function nav(items, active) {
     return '<aside class="dash-side"><div class="dash-side-inner">' +
       '<div class="dash-side-brand"><span class="logo-icon">' +
-      '<img class="dash-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="28" height="28" style="display:block;width:28px;height:28px;object-fit:contain;" />' +
+      '<img class="dash-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="28" height="28" style="display:block;width:28px;height:28px;object-fit:contain;flex-shrink:0;" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src=\'' + VG.url("assets/img/logo.svg") + '\';}" />' +
       "</span><div><strong>" + VG.site.name + "</strong><small>Operations console</small></div></div>" +
       '<nav class="dash-nav" aria-label="Dashboard sections">' +
       items.map(function (i) {

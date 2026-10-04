@@ -1,16 +1,30 @@
-﻿window.VG = window.VG || {};
+window.VG = window.VG || {};
 
 (function () {
   "use strict";
 
   function rootPath() {
+    try {
+      var s = document.currentScript;
+      if (!s) {
+        var scripts = document.querySelectorAll('script[src*="core.js"]');
+        if (scripts && scripts.length) s = scripts[scripts.length - 1];
+      }
+      if (s) {
+        var raw = s.getAttribute("src") || "";
+        var match = raw.match(/^(.*?)src\/js\/core\.js/i);
+        if (match) return match[1];
+      }
+    } catch (e) {}
+
     var p = window.location.pathname.replace(/\\/g, "/");
-    var segs = p.split("/").filter(Boolean);
-    var last = segs.length ? segs[segs.length - 1] : "";
-    if (last.indexOf(".") !== -1) segs.pop();
-    var out = "";
-    for (var i = 0; i < segs.length; i++) out += "../";
-    return out;
+    if (/\/public\/auth\/(admin|user)\//i.test(p)) {
+      return "../../../";
+    }
+    if (/\/public\//i.test(p)) {
+      return "../../";
+    }
+    return "";
   }
 
   function param(name) {
@@ -139,7 +153,9 @@ function stampYear() {
   }
 
   function markActiveLinks() {
-    var file = window.location.pathname.split("/").pop() || "index.html";
+    var cleanPath = window.location.pathname.replace(/\/+$/, "");
+    var file = cleanPath.split("/").pop() || "index.html";
+    if (!file || file.indexOf(".") === -1) file = "index.html";
     var q = window.location.search;
     qa("[data-nav-link]").forEach(function (a) {
       var target = a.getAttribute("data-nav-file") || "";
