@@ -18,7 +18,7 @@
         return "<li>" + VG.icon("x", "w-4 h-4") + "<span>" + VG.esc(f) + "</span></li>";
       }).join("") + "</ul>" : "") +
       '<a class="' + (p.highlight ? "btn-primary" : "btn-outline") + ' plan-cta" href="' + VG.url("public/auth/signup.html") + '">' +
-      (p.monthly === 0 ? "Create free account" : "Start free trial") + "</a></div>";
+      (p.monthly === 0 ? "Create free account" : "Start free trial") + "</a></article>";
   }
 
   function render() {

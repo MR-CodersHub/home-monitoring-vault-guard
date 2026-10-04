@@ -40,15 +40,15 @@
               VG.icon("user", "w-[18px] h-[18px]") +
             "</button>" +
             '<div class="profile-dropdown" id="profileDropdown" role="menu" aria-labelledby="profileBtn">' +
-              '<div class="pd-head"><span class="pd-avatar">' + VG.icon("shield", "w-5 h-5") + "</span>" +
-              '<div><strong>' + VG.esc(s.name) + "</strong><small>Secure account access</small></div></div>" +
-              dropdownItem("logIn", "Sign in", a.login, "Returning customer") +
-              dropdownItem("userPlus", "Create account", a.signup, "Start a 30-day trial") +
+              '<div class="pd-head">' + logo(32) +
+              '<div><strong>' + VG.esc(s.name) + "</strong></div></div>" +
+              dropdownItem("logIn", "Sign in", a.login) +
+              dropdownItem("userPlus", "Create account", a.signup) +
               '<span class="pd-sep" aria-hidden="true"></span>' +
-              dropdownItem("grid", "User dashboard", a.user, "Plan, devices, alerts") +
-              dropdownItem("shieldCheck", "Admin dashboard", a.admin, "Operations and revenue") +
+              dropdownItem("grid", "User dashboard", a.user) +
+              dropdownItem("shieldCheck", "Admin dashboard", a.admin) +
               '<span class="pd-sep" aria-hidden="true"></span>' +
-              dropdownItem("headset", "Talk to support", "public/pages/contact.html", "Desk open 24/7") +
+              dropdownItem("headset", "Talk to support", "public/pages/contact.html") +
             "</div>" +
           "</div>" +
           '<button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">' +

@@ -40,15 +40,10 @@
             '<p class="footer-desc">' + VG.esc(s.tagline) + " \u2014 professionally monitored alarms, cameras, access control and rental verification for homes that cannot be unmonitored.</p>" +
             '<div class="footer-socials" aria-label="Social media">' + socials() + "</div>" +
             '<form class="footer-news" data-form="newsletter" novalidate>' +
-              '<label class="footer-news-label" for="footerEmail">' + VG.icon("mail", "w-4 h-4") + "Security briefings, monthly. No noise.</label>" +
-              '<div class="footer-news-row">' +
-                '<input class="input" type="email" id="footerEmail" name="email" placeholder="you@email.com" data-label="Email" autocomplete="email" required />' +
-                '<button class="btn-primary btn-compact" type="submit">Subscribe</button>' +
-              "</div>" +
               '<p class="form-msg" data-form-msg role="status"></p>' +
             "</form>" +
           "</div>" +
-          col("Products", s.footerProducts) +
+          col("Services", s.footerProducts) +
           col("Company", s.footerCompany) +
           col("Support", s.footerSupport) +
         "</div>" +
