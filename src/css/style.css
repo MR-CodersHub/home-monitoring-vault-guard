@@ -153,20 +153,25 @@ ul { list-style: none; }
   transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur) var(--ease), background var(--dur) var(--ease);
   box-shadow: 0 0 30px rgba(168, 85, 247, 0.35);
   position: relative;
+  isolation: isolate;
   overflow: hidden;
 }
+/* The hover wash lives behind the label. Without a stacking context the
+   pseudo element paints over plain inline text and the CTA looks empty. */
 .btn-primary::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, #C084FC, #A855F7);
   opacity: 0;
+  z-index: -1;
   transition: opacity var(--dur) var(--ease);
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(168, 85, 247, 0.5); }
 .btn-primary:hover::before { opacity: 1; }
 .btn-primary svg { position: relative; z-index: 1; transition: transform var(--dur-fast) var(--ease); }
 .btn-primary:hover svg { transform: translateX(4px); }
+.btn-primary > * { position: relative; z-index: 1; }
 .btn-primary span, .btn-primary { position: relative; }
 
 .btn-ghost {
@@ -406,7 +411,8 @@ ul { list-style: none; }
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  padding: 70px 5% 20px 8%;
+  padding-block: 70px 20px;
+  padding-inline: 8% 5%;
   box-sizing: border-box;
 }
 
@@ -522,7 +528,7 @@ ul { list-style: none; }
 /* TOP-RIGHT: Wall-mounted top-right corner, pointing down-left toward center */
 .hero-cam-tr {
   top: 65px;
-  right: -20px;
+  inset-inline-end: -20px;
   width: clamp(360px, 32vw, 520px);
   transform: rotate(-10deg);
   transform-origin: top right;
@@ -532,7 +538,7 @@ ul { list-style: none; }
 /* BOTTOM-LEFT: Wall-mounted bottom-left corner, pointing up-right toward center */
 .hero-cam-bl {
   bottom: -25px;
-  left: -35px;
+  inset-inline-start: -35px;
   width: clamp(330px, 28vw, 460px);
   transform: rotate(-16deg);
   transform-origin: bottom left;
@@ -550,7 +556,7 @@ ul { list-style: none; }
   align-items: center;
   width: 100%;
   max-width: 580px;
-  margin-left: clamp(25px, 10vw, 500px);
+  margin-inline-start: clamp(25px, 10vw, 500px);
 }
 
 /* The translucent glass content card */
@@ -1559,10 +1565,11 @@ ul { list-style: none; }
   /* Hero cameras — scale appropriately on tablet */
   .hero {
     height: 100vh;
-    padding: 70px 4% 20px 5%;
+    padding-block: 70px 20px;
+    padding-inline: 5% 4%;
   }
-  .hero-cam-tr { width: clamp(280px, 28vw, 400px); right: -25px; top: 50px; }
-  .hero-cam-bl { width: clamp(250px, 25vw, 360px); left: -20px; bottom: -15px; }
+  .hero-cam-tr { width: clamp(280px, 28vw, 400px); inset-inline-end: -25px; top: 50px; }
+  .hero-cam-bl { width: clamp(250px, 25vw, 360px); inset-inline-start: -20px; bottom: -15px; }
   .hero-glass-card { padding: 24px 28px; max-width: 440px; }
 
   .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
@@ -1570,16 +1577,11 @@ ul { list-style: none; }
 }
 
 /* ════════════════════════════════════════════════════════════════
-   RESPONSIVE — MOBILE (≤ 768px)
-════════════════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  :root {
-    --section-pad: 64px;
-  }
-
-  .container { padding: 0 20px; }
-
-  /* Nav */
+   NAVIGATION DRAWER (≤ 1024px)
+   The link row no longer fits next to the brand, the controls and the
+   primary action, so it collapses into the full-screen drawer.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
   .nav-container {
     width: 100%;
     padding: 0 20px;
@@ -1604,6 +1606,7 @@ ul { list-style: none; }
     gap: 12px;
     z-index: 950;
     padding: 85px 24px 36px;
+    overflow-y: auto;
   }
   .nav-links.open { display: flex; }
   .nav-links li {
@@ -1638,16 +1641,28 @@ ul { list-style: none; }
   .hamburger { display: inline-flex; z-index: 1000; }
   .hamburger.open span { background: #FFFFFF; }
   .mobile-overlay.open { display: block; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 768px)
+════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 64px;
+  }
+
+  .container { padding: 0 20px; }
 
   /* Hero */
   .hero {
     height: auto;
     min-height: 95vh;
-    padding: 85px 20px 40px;
+    padding-block: 85px 40px;
+    padding-inline: 20px;
     justify-content: center;
   }
-  .hero-cam-tr { width: 170px; right: -25px; top: 20px; opacity: 0.65; }
-  .hero-cam-bl { width: 150px; left: -20px; bottom: -10px; opacity: 0.65; }
+  .hero-cam-tr { width: 170px; inset-inline-end: -25px; top: 20px; opacity: 0.65; }
+  .hero-cam-bl { width: 150px; inset-inline-start: -20px; bottom: -10px; opacity: 0.65; }
   .hero-orb { display: none; }
   .hero-center { max-width: 100%; justify-content: center; }
   .hero-glass-card { padding: 24px 20px; max-width: 100%; }
@@ -1709,8 +1724,8 @@ ul { list-style: none; }
   .sol-card-large, .sol-card-large.sol-card-monitoring,
   .sol-card-medium, .sol-card-small { grid-column: span 1; }
 
-  .hero-cam-tr { width: 130px; right: -10px; }
-  .hero-cam-bl { width: 110px; left: -10px; }
+  .hero-cam-tr { width: 130px; inset-inline-end: -10px; }
+  .hero-cam-bl { width: 110px; inset-inline-start: -10px; }
   .hero-glass-card { padding: 28px 20px; }
   .hero-eyebrow { font-size: 9px; letter-spacing: 0.15em; }
   .stat-number { font-size: 1.9rem; }
@@ -1779,7 +1794,7 @@ html {
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(124, 58, 237, 0.34); }
 
 /* ── Light Theme Mobile Navigation Drawer ──────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   [data-theme="light"] .nav-links {
     background: rgba(246, 244, 254, 0.98);
     border-bottom: 1px solid rgba(124, 58, 237, 0.12);

@@ -5,9 +5,10 @@ VG.dash = (function () {
 
   function nav(items, active) {
     return '<aside class="dash-side"><div class="dash-side-inner">' +
-      '<div class="dash-side-brand"><span class="logo-icon">' +
+      '<a class="dash-side-brand" href="' + VG.url("index.html") + '" aria-label="' + VG.esc(VG.site.name) + ' home">' +
+      '<span class="logo-icon">' +
       '<img class="dash-logo-img" src="' + VG.url("assets/logo.png") + '" alt="VaultGuard logo" width="28" height="28" style="display:block;width:28px;height:28px;object-fit:contain;flex-shrink:0;" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src=\'' + VG.url("assets/img/logo.svg") + '\';}" />' +
-      "</span><div><strong>" + VG.site.name + "</strong><small>Operations console</small></div></div>" +
+      '</span><div><strong>' + VG.esc(VG.site.name) + "</strong><small>Operations console</small></div></a>" +
       '<nav class="dash-nav" aria-label="Dashboard sections">' +
       items.map(function (i) {
         return '<a class="dash-nav-link' + (i.id === active ? " is-active" : "") + '" href="#' + i.id + '"' +
@@ -15,20 +16,82 @@ VG.dash = (function () {
           VG.icon(i.icon, "w-[18px] h-[18px]") + "<span>" + VG.esc(i.label) + "</span>" +
           (i.badge ? '<em class="dash-badge">' + VG.esc(i.badge) + "</em>" : "") + "</a>";
       }).join("") + "</nav>" +
-      '<div class="dash-side-foot"><a class="btn-ghost btn-compact" href="' + VG.url("index.html") + '">' +
-      VG.icon("arrowRight", "w-4 h-4") + "Back to site</a></div>" +
+      '<div class="dash-side-foot">' +
+      '<a class="btn-ghost btn-compact dash-foot-link" href="' + VG.url("index.html") + '">' +
+      VG.icon("arrowRight", "w-4 h-4") + "Back to site</a>" +
+      '<a class="btn-ghost btn-compact dash-foot-link" href="' + VG.url("public/auth/login.html") + '">' +
+      VG.icon("logOut", "w-4 h-4") + "Sign out</a>" +
+      "</div>" +
       "</div></aside>";
   }
+
+  /* Keeps the sidebar in step with the section that is on screen and makes
+     a deep link such as user-dashboard.html#devices land on the right panel. */
+  function spy(defaultId) {
+    var links = VG.qa(".dash-nav-link");
+    if (!links.length) return;
+    var sections = links.map(function (l) {
+      var id = (l.getAttribute("href") || "").replace("#", "");
+      return id ? VG.q("#" + id) : null;
+    });
+
+    function setActive(id) {
+      links.forEach(function (l) {
+        var on = (l.getAttribute("href") || "") === "#" + id;
+        l.classList.toggle("is-active", on);
+        if (on) l.setAttribute("aria-current", "page");
+        else l.removeAttribute("aria-current");
+      });
+    }
+
+    function fromHash() {
+      var id = (window.location.hash || "").replace("#", "");
+      return id && VG.q("#" + id) ? id : null;
+    }
+
+    links.forEach(function (l) {
+      l.addEventListener("click", function () {
+        setActive((l.getAttribute("href") || "").replace("#", ""));
+      });
+    });
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) setActive(en.target.id);
+        });
+      }, { rootMargin: "-15% 0px -70% 0px", threshold: 0 });
+      sections.forEach(function (s) { if (s) io.observe(s); });
+    }
+
+    var hash = fromHash();
+    if (hash) {
+      setActive(hash);
+      window.requestAnimationFrame(function () {
+        var target = VG.q("#" + hash);
+        if (target) target.scrollIntoView({ block: "start" });
+      });
+    } else {
+      setActive(defaultId || (sections[0] && sections[0].id));
+    }
+
+    window.addEventListener("hashchange", function () {
+      var id = fromHash();
+      if (id) setActive(id);
+    });
+  }
+
 
 
   function kpi(items) {
     return '<div class="kpi-grid">' + items.map(function (k) {
+      var value = typeof k.value === "number" ? VG.num(k.value) : VG.esc(k.value);
       return '<article class="kpi vg-card" data-reveal="up">' +
         '<div class="kpi-top"><span class="kpi-ico ' + (k.tone || "") + '">' + VG.icon(k.icon, "w-5 h-5") + "</span>" +
         (k.delta ? '<span class="kpi-delta ' + (k.up ? "up" : "down") + '">' + VG.icon(k.up ? "arrowUp" : "arrowRight", "w-3 h-3") + k.delta + "</span>" : "") +
         "</div>" +
         '<p class="kpi-label">' + VG.esc(k.label) + "</p>" +
-        '<p class="kpi-value">' + (k.prefix || "") + VG.num(k.value) + (k.suffix || "") + "</p>" +
+        '<p class="kpi-value">' + (k.prefix || "") + value + (k.suffix || "") + "</p>" +
         '<p class="kpi-foot">' + VG.esc(k.foot || "") + "</p></article>";
     }).join("") + "</div>";
   }
@@ -147,14 +210,15 @@ VG.dash = (function () {
   function clock(scope) {
     var el = VG.q("[data-dash-clock]", scope);
     if (!el) return;
+    var out = VG.q("[data-dash-clock-time]", el) || el;
     function tick() {
       var d = new Date();
-      el.textContent = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ":" +
+      out.textContent = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ":" +
         ("0" + d.getSeconds()).slice(-2) + " CT";
     }
     tick();
     setInterval(tick, 1000);
   }
 
-  return { nav: nav, kpi: kpi, bars: bars, spark: spark, donut: donut, table: table, filters: filters, tabs: tabs, switches: switches, clock: clock };
+  return { nav: nav, spy: spy, kpi: kpi, bars: bars, spark: spark, donut: donut, table: table, filters: filters, tabs: tabs, switches: switches, clock: clock };
 })();

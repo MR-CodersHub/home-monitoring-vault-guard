@@ -13,6 +13,7 @@
       out += '<li><a class="nav-link" href="' + VG.url(item.path) + '" data-nav-link data-nav-file="' + file + '">' +
         VG.esc(item.label) + "</a></li>";
     });
+    out += '<li class="nav-cta-item"><a class="nav-cta btn-primary" href="' + VG.url("public/pages/pricing.html") + '">Get Protected</a></li>';
     return out;
   }
 
@@ -33,6 +34,7 @@
         "</a>" +
         '<ul class="nav-links" id="navLinks" role="list">' + navLinks() + "</ul>" +
         '<div class="nav-actions">' +
+          '<a class="nav-cta btn-primary btn-compact" href="' + VG.url("public/pages/pricing.html") + '">Get Protected</a>' +
           '<button type="button" class="icon-btn" data-theme-toggle></button>' +
           '<button type="button" class="icon-btn" data-dir-toggle></button>' +
           '<div class="profile-menu">' +

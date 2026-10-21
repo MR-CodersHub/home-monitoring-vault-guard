@@ -36,6 +36,10 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  /* Grid items stretch by default, which turns a pill label into a full-width bar. */
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
 }
 .vg-eyebrow svg { flex-shrink: 0; }
 .vg-title {
@@ -207,6 +211,8 @@
 .crumbs a:hover { color: var(--accent-bright); }
 .crumbs svg { opacity: 0.55; }
 .crumbs [aria-current] { color: var(--accent-bright); font-weight: 600; }
+/* .crumbs is a flex row, so text-align alone never centres it. */
+.crumbs.vg-center { justify-content: center; text-align: center; }
 
 /* ---------- Reveal + visibility ---------- */
 [data-reveal] { opacity: 0; transform: translateY(26px); transition: opacity 0.72s var(--ease) var(--d, 0s), transform 0.72s var(--ease) var(--d, 0s); }
@@ -267,8 +273,12 @@
 
 /* ---------- Stats ---------- */
 .stat-mini { text-align: center; padding: 22px 16px; }
-.stat-mini strong { display: block; font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: var(--text-primary); }
-.stat-mini span { font-size: 0.84rem; color: var(--text-muted); }
+.stat-mini strong { display: block; font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; line-height: 1.16; color: var(--text-primary); }
+/* Only the caption is small: the counter inside <strong> keeps the headline size. */
+.stat-mini > span { font-size: 0.84rem; color: var(--text-muted); }
+/* A unit sign (% or s) sits on the number's baseline, never stretched to full size. */
+.stat-mini .unit { font-size: 0.46em; font-weight: 700; color: var(--accent-bright); vertical-align: 0.14em; margin-inline-start: 2px; }
+.stat-mini strong.accent { color: var(--accent-bright); font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .counter { font-variant-numeric: tabular-nums; }
 
 @media (max-width: 980px) {
@@ -397,7 +407,7 @@
 .form-msg svg { flex-shrink: 0; margin-top: 2px; }
 .form-msg.ok { background: rgba(34, 211, 165, 0.1); border: 1px solid rgba(34, 211, 165, 0.28); color: var(--green); }
 .form-msg.err { background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.28); color: #FB7185; }
-.form-note { display: flex; align-items: flex-start; gap: 9px; margin-top: 14px; font-size: 0.8rem; color: var(--text-faint); line-height: 1.6; }
+.form-note { display: flex; align-items: flex-start; gap: 9px; margin-top: 14px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
 .form-note svg { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
 
 .form-card { padding: 36px; }
@@ -904,7 +914,8 @@
 .dash-side { position: fixed; top: 0; bottom: 0; left: 0; inset-inline-start: 0; width: 264px; height: 100vh; overflow-y: auto; border-inline-end: 1px solid var(--glass-border); background: rgba(18, 13, 43, 0.82); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); z-index: 150; box-shadow: 4px 0 25px rgba(0, 0, 0, 0.35); }
 [data-theme="light"] .dash-side { background: rgba(255, 255, 255, 0.86); }
 .dash-side-inner { display: flex; flex-direction: column; gap: 26px; padding: 22px 16px; min-height: 100%; }
-.dash-side-brand { display: flex; align-items: center; gap: 11px; padding: 4px 8px 16px; border-bottom: 1px solid rgba(168, 85, 247, 0.14); }
+.dash-side-brand { display: flex; align-items: center; gap: 11px; padding: 4px 8px 16px; border-bottom: 1px solid rgba(168, 85, 247, 0.14); text-decoration: none; color: inherit; border-radius: 10px; transition: opacity var(--dur-fast) var(--ease); }
+.dash-side-brand:hover { opacity: 0.82; }
 .dash-side-brand .logo-icon { display: flex; }
 .dash-side-brand strong { display: block; font-family: var(--font-heading); font-size: 0.98rem; }
 .dash-side-brand small { font-size: 0.72rem; color: var(--text-faint); }
@@ -924,7 +935,9 @@
 [data-theme="light"] .dash-nav-link.is-active { color: var(--text-primary); }
 .dash-nav-link svg { flex-shrink: 0; }
 .dash-badge { margin-inline-start: auto; padding: 2px 8px; border-radius: var(--radius-full); background: rgba(168, 85, 247, 0.2); color: var(--accent-bright); font-size: 0.7rem; font-style: normal; }
-.dash-side-foot { margin-top: auto; }
+.dash-side-foot { margin-top: auto; display: grid; gap: 8px; }
+.dash-foot-link { justify-content: flex-start; width: 100%; }
+.dash-foot-link svg { flex-shrink: 0; }
 
 .dash-main { margin-inline-start: 264px; width: calc(100% - 264px); min-width: 0; box-sizing: border-box; padding: 28px 36px 60px; }
 .dash-head { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 26px; }
@@ -1461,16 +1474,21 @@
   color: var(--accent-bright);
 }
 
+/* The auth heading is centred inside the form card, not against the viewport. */
+.auth-card-glass .form-head { text-align: center; }
 .auth-card-glass .form-head h1 {
   font-family: var(--font-heading);
   font-size: 1.88rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  margin-bottom: 6px;
 }
 .auth-card-glass .form-head p {
   color: var(--text-muted);
   font-size: 0.92rem;
   margin-top: 6px;
+  margin-inline: auto;
+  max-width: 40ch;
 }
 
 /* Demo Credentials Bar */
@@ -1631,6 +1649,9 @@
 .cta-band { position: relative; overflow: hidden; border-radius: 28px; padding: 54px 44px; background: linear-gradient(140deg, rgba(168, 85, 247, 0.28), rgba(33, 21, 63, 0.72)); border: 1px solid rgba(168, 85, 247, 0.3); }
 .cta-band::after { content: ""; position: absolute; inset-block-start: -40%; inset-inline-end: -8%; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(232, 121, 249, 0.34), transparent 66%); pointer-events: none; }
 .cta-band > * { position: relative; z-index: 2; }
+.cta-band-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); gap: 40px; align-items: center; }
+.cta-band-split .form-card { margin-top: 0; }
+@media (max-width: 900px) { .cta-band-split { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
 @media (max-width: 700px) { .cta-band { padding: 34px 24px; } }
 
 /* ---------- Narrow-viewport hardening ----------
@@ -1666,8 +1687,31 @@
   .feed time, .agent .dot-pill { margin-inline-start: auto; }
 }
 
+/* Header CTA — one primary action on every page, same place in the bar. */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-cta-item { display: none !important; }
+@media (max-width: 1024px) {
+  .nav-cta { display: none; }
+  .nav-cta-item { display: flex !important; margin-top: 12px; }
+  .nav-cta-item .nav-cta {
+    display: inline-flex;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+}
+
 /* Navbar: equal around spacing, balanced touch targets, and responsive alignment */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-container {
     width: 100%;
     padding: 0 20px;
@@ -1765,7 +1809,7 @@
 /* Hero: the desktop left offset (clamp(25px, 10vw, 500px)) adds to the item
    width and pushes the page sideways once the viewport is narrow. */
 .hero-center { min-width: 0; }
-@media (max-width: 768px) { .hero-center { margin-left: 0; } }
+@media (max-width: 768px) { .hero-center { margin-inline-start: 0; } }
 
 /* ---------- Print + motion + RTL finishing ---------- */
 @media print {
@@ -1786,6 +1830,13 @@ html { scroll-behavior: smooth; }
 [dir="rtl"] .chart-lab, [dir="rtl"] .toc a::before { transform: none; }
 [dir="rtl"] .legal-section h2 .sec-num { margin-inline-end: 0; }
 [dir="rtl"] .step-num, [dir="rtl"] .avatar, [dir="rtl"] .agent-avatar { transform: none; }
+
+/* Mirrored arrows and camera props for right-to-left layouts */
+[dir="rtl"] .vg-arrow { transform: scaleX(-1); }
+[dir="rtl"] .btn-primary:hover svg { transform: translateX(-4px); }
+[dir="rtl"] .btn-primary:hover svg.vg-arrow { transform: translateX(-4px) scaleX(-1); }
+[dir="rtl"] .hero-cam-tr { transform: rotate(10deg); transform-origin: top left; }
+[dir="rtl"] .hero-cam-bl { transform: rotate(16deg); transform-origin: bottom right; }
 
 /* ---------- Form internals referenced by form-validation.js ---------- */
 .spinner {
@@ -1979,8 +2030,11 @@ input:-webkit-autofill { -webkit-text-fill-color: var(--text-primary); transitio
   .auth-aside { padding: 40px 24px; }
   .auth-aside .aside-copy { margin-block: 28px 0; }
 }
-.dash-head-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.dash-head-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: flex-end; }
 .dash-head-actions .icon-btn { width: 38px; height: 38px; }
+.dash-clock { display: inline-flex; align-items: center; gap: 8px; }
+.dash-clock svg { color: var(--accent-bright); }
+.dash-signout { display: inline-flex; align-items: center; gap: 8px; }
 .panel-head { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 18px; }
 .panel-head h3 { font-family: var(--font-heading); font-size: 1.02rem; font-weight: 700; }
 .panel-head p { margin-top: 5px; font-size: 0.83rem; color: var(--text-faint); }

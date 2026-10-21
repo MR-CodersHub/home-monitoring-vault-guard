@@ -21,7 +21,7 @@
     document.documentElement.setAttribute("dir", d);
     document.body && document.body.classList.toggle("is-rtl", d === "rtl");
     VG.qa("[data-dir-toggle]").forEach(function (btn) {
-      btn.innerHTML = VG.icon(d === "rtl" ? "chevRight" : "globe", "w-[18px] h-[18px]");
+      btn.innerHTML = VG.icon("direction", "w-[18px] h-[18px] vg-dir-icon");
       btn.setAttribute("aria-label", d === "rtl" ? "Switch to left to right layout" : "Switch to right to left layout");
       btn.setAttribute("title", d === "rtl" ? "LTR layout" : "RTL layout");
       btn.setAttribute("aria-pressed", d === "rtl" ? "true" : "false");

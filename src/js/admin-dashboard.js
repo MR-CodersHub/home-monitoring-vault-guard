@@ -53,6 +53,7 @@
         { id: "desk", label: "Desk & agents", icon: "headset" },
         { id: "tickets", label: "Tickets", icon: "ticket", badge: "4" }
       ], "overview");
+      VG.dash.spy("overview");
     }
 
     var kpiHost = VG.q("[data-kpi]");

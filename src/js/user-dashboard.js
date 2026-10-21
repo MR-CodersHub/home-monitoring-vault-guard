@@ -38,12 +38,13 @@
         { id: "billing", label: "Billing", icon: "card" },
         { id: "settings", label: "Settings", icon: "sliders" }
       ], "overview");
+      VG.dash.spy("overview");
     }
 
     var kpiHost = VG.q("[data-kpi]");
     if (kpiHost) {
       kpiHost.innerHTML = VG.dash.kpi([
-        { label: "Plan", value: 0, icon: "briefcase", tone: "t-purple", foot: "Smart \u00b7 $39/mo, renews 12 Oct" },
+        { label: "My plan", value: "Smart", icon: "briefcase", tone: "t-purple", foot: "$39/mo, renews 12 Oct" },
         { label: "Days protected", value: 412, icon: "calendar", up: true, delta: "+30", tone: "t-mint", foot: "Continuous coverage since Mar 2025" },
         { label: "Devices online", value: 5, suffix: "/6", icon: "wifi", tone: "t-blue", foot: "One sensor needs a battery" },
         { label: "Alerts this month", value: 23, icon: "bell", tone: "t-green", foot: "2 needed review, 21 handled" }
